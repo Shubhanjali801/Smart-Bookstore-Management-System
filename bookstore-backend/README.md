@@ -1,3 +1,6 @@
+BookStore backend
+
+```
 bookstore-backend/
 ├── config/
 │   ├── db.js              ← MongoDB connection
@@ -36,3 +39,5 @@ bookstore-backend/
 ├── .gitignore
 ├── package.json
 └── server.js              ← entry point
+
+```
