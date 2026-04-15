@@ -1,0 +1,68 @@
+import { Routes, Route, Navigate } from "react-router-dom"
+import Navbar           from "./components/common/Navbar"
+import Footer           from "./components/common/Footer"
+import ProtectedRoute   from "./components/common/ProtectedRoute"
+import AdminRoute       from "./components/common/AdminRoute"
+
+import LoginPage        from "./pages/auth/LoginPage"
+import RegisterPage     from "./pages/auth/RegisterPage"
+import BooksListPage    from "./pages/books/BooksListPage"
+import BookDetailPage   from "./pages/books/BookDetailPage"
+import CartPage         from "./pages/cart/CartPage"
+import CheckoutPage     from "./pages/payment/CheckoutPage"
+import MyOrdersPage     from "./pages/orders/MyOrdersPage"
+import OrderDetailPage  from "./pages/orders/OrderDetailPage"
+import OrderSuccessPage from "./pages/orders/OrderSuccessPage"
+import AdminDashboard   from "./pages/admin/AdminDashboard"
+import AdminBooksPage   from "./pages/admin/AdminBooksPage"
+import AdminOrdersPage  from "./pages/admin/AdminOrdersPage"
+
+function App() {
+  return (
+    <div style={{
+      minHeight: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      width: "100%",
+      backgroundColor: "#f0f2f5",
+    }}>
+      <Navbar />
+      <main style={{ flex: 1, width: "100%" }}>
+        <Routes>
+          <Route path="/"          element={<Navigate to="/books" />} />
+          <Route path="/login"     element={<LoginPage />} />
+          <Route path="/register"  element={<RegisterPage />} />
+          <Route path="/books"     element={<BooksListPage />} />
+          <Route path="/books/:id" element={<BookDetailPage />} />
+
+          <Route path="/cart" element={
+            <ProtectedRoute><CartPage /></ProtectedRoute>} />
+
+          <Route path="/checkout" element={
+            <ProtectedRoute><CheckoutPage /></ProtectedRoute>} />
+
+          <Route path="/orders" element={
+            <ProtectedRoute><MyOrdersPage /></ProtectedRoute>} />
+
+          <Route path="/orders/:id" element={
+            <ProtectedRoute><OrderDetailPage /></ProtectedRoute>} />
+
+          <Route path="/order-success" element={
+            <ProtectedRoute><OrderSuccessPage /></ProtectedRoute>} />
+
+          <Route path="/admin" element={
+            <AdminRoute><AdminDashboard /></AdminRoute>} />
+
+          <Route path="/admin/books" element={
+            <AdminRoute><AdminBooksPage /></AdminRoute>} />
+            
+          <Route path="/admin/orders" element={
+            <AdminRoute><AdminOrdersPage /></AdminRoute>} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
+export default App
