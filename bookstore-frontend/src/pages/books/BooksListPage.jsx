@@ -18,7 +18,7 @@ const BooksListPage = () => {
   const [page, setPage]             = useState(1)
 
   useEffect(() => {
-    const params = { page, limit: 9 }
+    const params = { page, limit: 10 }
     if (search) params.search = search
     if (genre && genre !== "All") params.genre = genre
     dispatch(fetchBooks(params))
@@ -44,7 +44,7 @@ const BooksListPage = () => {
 
      {/* ── Search Bar ── */}
 <Box sx={{ px: { xs: 2, md: 4 }, pt: 3, pb: 1 }}>
-  <Box sx={{ maxWidth: 500, }}>   
+  <Box sx={{ maxWidth: 600, }}>   
     <BookSearch
       value={search}
       onChange={(val) => { setSearch(val); setPage(1) }}
@@ -91,9 +91,10 @@ const BooksListPage = () => {
             </Box>
           ) : (
             <>
+
               <Grid container spacing={2.5}>
                 {books.map((book) => (
-                  <Grid item xs={12} sm={6} md={4} lg={3} key={book._id}>
+                  <Grid item xs={6} sm={4} md={3} lg={3} key={book._id}>
                     <BookCard book={book} />
                   </Grid>
                 ))}

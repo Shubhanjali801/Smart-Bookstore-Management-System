@@ -59,7 +59,7 @@ const BookDetailPage = () => {
           startIcon={<ArrowBack />}
           onClick={() => navigate("/books")}
           size="small"
-          sx={{ color: "#534AB7", fontWeight: 600 }}
+          sx={{ color: "#534AB7", fontWeight: 300 }}
         >
           Back to Books
         </Button>
@@ -74,7 +74,7 @@ const BookDetailPage = () => {
         </Typography>
         <Typography variant="body2" fontWeight="600"
           color="#1a1a2e" noWrap
-          sx={{ maxWidth: 300 }}>
+          sx={{ maxWidth: 200 }}>
           {book.title}
         </Typography>
       </Box>

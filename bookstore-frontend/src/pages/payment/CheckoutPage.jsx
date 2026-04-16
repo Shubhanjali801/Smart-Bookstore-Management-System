@@ -538,7 +538,7 @@ const CheckoutPage = () => {
                     : "💳 Step 2: Complete payment"}
                 </Typography>
               </Box>
-
+              
             </Box>
           </Paper>
 
