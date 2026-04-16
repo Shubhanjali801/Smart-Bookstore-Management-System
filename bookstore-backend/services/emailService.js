@@ -1,4 +1,3 @@
-
 const transporter = require('../config/email');
 const EmailLog = require('../models/EmailLog');
 
