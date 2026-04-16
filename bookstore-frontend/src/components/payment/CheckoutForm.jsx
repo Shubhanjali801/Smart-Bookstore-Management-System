@@ -42,22 +42,25 @@ const CheckoutForm = () => {
     resolver: yupResolver(schema),
   })
 
-  // Step 1 — Create order once shipping is confirmed
-  useEffect(() => {
-    if (activeStep === 1 && items.length > 0 && shippingAddress) {
-      const orderItems = items.map((item) => ({
-        bookId: item._id, quantity: item.quantity,
-      }))
-      dispatch(createOrder({ items: orderItems, shippingAddress }))
-    }
-  }, [activeStep])
+// Step 1 — Create order when shipping address is confirmed
+useEffect(() => {
+  if (activeStep === 1 && items.length > 0 && shippingAddress) {
+    const orderItems = items.map((item) => ({
+      bookId: item._id,
+      quantity: item.quantity,
+    }))
+    dispatch(createOrder({ items: orderItems, shippingAddress }))
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [activeStep])
 
-  // Step 2 — Create payment intent once order is created
-  useEffect(() => {
-    if (createdOrder?._id) {
-      dispatch(createPaymentIntent(createdOrder._id))
-    }
-  }, [createdOrder])
+// Step 2 — Create payment intent once order is created
+useEffect(() => {
+  if (createdOrder?._id) {
+    dispatch(createPaymentIntent(createdOrder._id))
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [createdOrder])
 
   const onShippingSubmit = (data) => {
     setShippingAddress(data.shippingAddress)
