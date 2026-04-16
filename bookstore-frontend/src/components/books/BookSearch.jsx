@@ -6,7 +6,7 @@ import {
 import { Search, Clear } from "@mui/icons-material"
 
 const suggestions = [
-  "Clean Code", "Fiction", "Self Help", "Programming", "Finance"
+  "Clean Code", "Fiction", "Self Help", "Programming", "Finance","Phycology"
 ]
 
 const BookSearch = ({ value, onChange, onClear }) => {
@@ -51,7 +51,7 @@ const BookSearch = ({ value, onChange, onClear }) => {
                 variant="outlined"
                 clickable
                 onClick={() => onChange(s)}
-                sx={{ fontSize: "12px", bgcolor: "#fff" }}
+                sx={{ fontSize: "17px", bgcolor: "#fff" }}
               />
             ))}
           </Stack>

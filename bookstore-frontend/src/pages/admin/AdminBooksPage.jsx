@@ -7,15 +7,13 @@ import {
   fetchBooks, createBook, updateBook, deleteBook
 } from "../../features/books/bookSlice"
 import {
-  Box, Typography, Button, Card, CardContent,
+  Box, Typography, Button, Paper,
   TextField, Table, TableBody, TableCell,
   TableHead, TableRow, IconButton, Dialog,
   DialogTitle, DialogContent, DialogActions,
-  Grid, Chip, CircularProgress, InputAdornment
+  Grid, Chip, CircularProgress, InputAdornment, Avatar
 } from "@mui/material"
-import {
-  Add, Edit, Delete, Search
-} from "@mui/icons-material"
+import { Add, Edit, Delete, Search } from "@mui/icons-material"
 
 // ── Validation ─────────────────────────────────────────────────
 const schema = yup.object({
@@ -80,192 +78,347 @@ const AdminBooksPage = () => {
   )
 
   return (
-    <Box sx={{ maxWidth: 1100, mx: "auto", px: 3, py: 4 }}>
+    <Box sx={{ bgcolor: "#f0f2f5", minHeight: "100vh", width: "100%" }}>
 
-      {/* Header */}
-      <Box sx={{ display: "flex", justifyContent: "space-between",
-        alignItems: "center", mb: 3 }}>
-        <Typography variant="h4" fontWeight="bold">
-          Manage Books ({books.length})
-        </Typography>
-        <Button variant="contained" startIcon={<Add />}
+      {/* ── Header ── */}
+      <Box sx={{
+        bgcolor: "#fff",
+        borderBottom: "1px solid #e8e8e8",
+        px: { xs: 2, md: 6 },
+        py: 2.5,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+      }}>
+        <Box>
+          <Typography variant="h5" fontWeight="800" color="#1a1a2e">
+            Manage Books
+          </Typography>
+          <Typography variant="body2" color="text.secondary" mt={0.5}>
+            {books.length} books in inventory
+          </Typography>
+        </Box>
+        <Button
+          variant="contained"
+          startIcon={<Add />}
           onClick={() => handleOpen()}
-          sx={{ borderRadius: 2 }}>
+          sx={{ borderRadius: 2, fontWeight: 600, px: 3 }}
+        >
           Add Book
         </Button>
       </Box>
 
-      {/* Search */}
-      <TextField
-        placeholder="Search books..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        size="small"
-        sx={{ mb: 3, maxWidth: 400 }}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <Search fontSize="small" />
-            </InputAdornment>
-          )
-        }}
-      />
+      {/* ── Content ── */}
+      <Box sx={{ px: { xs: 2, md: 6 }, py: 4 }}>
 
-      {/* Table */}
-      <Card sx={{ borderRadius: 3 }}>
-        <CardContent sx={{ p: 0 }}>
+        {/* Search */}
+        <TextField
+          placeholder="Search by title or author..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          size="small"
+          sx={{ mb: 3, maxWidth: 400 }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <Search fontSize="small" />
+              </InputAdornment>
+            ),
+            sx: { borderRadius: 2, bgcolor: "#fff" }
+          }}
+        />
+
+        {/* Table */}
+        <Paper elevation={0} sx={{
+          borderRadius: 3,
+          border: "1px solid #e8e8e8",
+          overflow: "hidden",
+        }}>
           {isLoading ? (
-            <Box sx={{ display: "flex", justifyContent: "center", py: 6 }}>
+            <Box sx={{ display: "flex",
+              justifyContent: "center", py: 8 }}>
               <CircularProgress />
             </Box>
           ) : (
             <Table>
               <TableHead>
-                <TableRow sx={{ background: "#f5f5f5" }}>
-                  {["Book", "Genre", "Price", "Stock", "Actions"].map((h) => (
-                    <TableCell key={h} sx={{ fontWeight: "bold" }}>{h}</TableCell>
+                <TableRow sx={{ bgcolor: "#fafafa" }}>
+                  {["Book", "Genre", "Price",
+                    "Stock", "Actions"].map((h) => (
+                    <TableCell key={h} sx={{
+                      fontWeight: "700",
+                      color: "text.secondary",
+                      fontSize: "12px",
+                      letterSpacing: 0.5,
+                    }}>
+                      {h.toUpperCase()}
+                    </TableCell>
                   ))}
                 </TableRow>
               </TableHead>
               <TableBody>
                 {filtered.map((book) => (
-                  <TableRow key={book._id}
-                    sx={{ "&:hover": { background: "#fafafa" } }}>
+                  <TableRow key={book._id} sx={{
+                    "&:hover": { bgcolor: "#f9f9f9" },
+                    borderBottom: "1px solid #f5f5f5",
+                    transition: "background 0.15s",
+                  }}>
+
+                    {/* Book */}
                     <TableCell>
-                      <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
-                        <Box component="img"
+                      <Box sx={{
+                        display: "flex",
+                        gap: 2, alignItems: "center",
+                      }}>
+                        <Box
+                          component="img"
                           src={book.imageUrl ||
-                            "https://via.placeholder.com/40x50"}
-                          sx={{ width: 40, height: 50,
-                            objectFit: "cover", borderRadius: 1 }}
+                            "https://via.placeholder.com/45x60"}
+                          alt={book.title}
+                          sx={{
+                            width: 45, height: 60,
+                            objectFit: "cover",
+                            borderRadius: 1.5,
+                            boxShadow: 1,
+                            flexShrink: 0,
+                          }}
                         />
                         <Box>
-                          <Typography variant="body2" fontWeight="600">
+                          <Typography variant="body2"
+                            fontWeight="700" color="#1a1a2e">
                             {book.title}
                           </Typography>
                           <Typography variant="caption"
                             color="text.secondary">
-                            {book.author}
+                            by {book.author}
                           </Typography>
                         </Box>
                       </Box>
                     </TableCell>
+
+                    {/* Genre */}
                     <TableCell>
-                      <Chip label={book.genre} size="small"
-                        color="primary" variant="outlined" />
+                      <Chip
+                        label={book.genre}
+                        size="small"
+                        color="primary"
+                        variant="outlined"
+                        sx={{ fontWeight: 600, fontSize: "11px" }}
+                      />
                     </TableCell>
-                    <TableCell>₹{book.price}</TableCell>
+
+                    {/* Price */}
                     <TableCell>
-                      <Typography fontWeight="600"
-                        color={book.stock < 5
-                          ? "error.main" : "success.main"}>
-                        {book.stock}
+                      <Typography fontWeight="700"
+                        color="success.main">
+                        ₹{book.price}
                       </Typography>
                     </TableCell>
+
+                    {/* Stock */}
                     <TableCell>
-                      <IconButton color="primary" size="small"
-                        onClick={() => handleOpen(book)}>
-                        <Edit fontSize="small" />
-                      </IconButton>
-                      <IconButton color="error" size="small"
-                        onClick={() => setDeleteConfirm(book._id)}>
-                        <Delete fontSize="small" />
-                      </IconButton>
+                      <Chip
+                        label={book.stock}
+                        size="small"
+                        color={
+                          book.stock < 5 ? "error" :
+                          book.stock < 20 ? "warning" : "success"
+                        }
+                        sx={{ fontWeight: 700, minWidth: 44 }}
+                      />
                     </TableCell>
+
+                    {/* Actions */}
+                    <TableCell>
+                      <Box sx={{ display: "flex", gap: 1 }}>
+                        <IconButton
+                          size="small"
+                          onClick={() => handleOpen(book)}
+                          sx={{
+                            bgcolor: "#EDE7F6",
+                            color: "#534AB7",
+                            borderRadius: 1.5,
+                            "&:hover": { bgcolor: "#D1C4E9" },
+                          }}
+                        >
+                          <Edit fontSize="small" />
+                        </IconButton>
+                        <IconButton
+                          size="small"
+                          onClick={() => setDeleteConfirm(book._id)}
+                          sx={{
+                            bgcolor: "#FFEBEE",
+                            color: "#E24B4A",
+                            borderRadius: 1.5,
+                            "&:hover": { bgcolor: "#FFCDD2" },
+                          }}
+                        >
+                          <Delete fontSize="small" />
+                        </IconButton>
+                      </Box>
+                    </TableCell>
+
                   </TableRow>
                 ))}
+
+                {/* Empty state */}
+                {filtered.length === 0 && !isLoading && (
+                  <TableRow>
+                    <TableCell colSpan={5} sx={{ textAlign: "center",
+                      py: 6, color: "text.secondary" }}>
+                      No books found matching your search.
+                    </TableCell>
+                  </TableRow>
+                )}
+
               </TableBody>
             </Table>
           )}
-        </CardContent>
-      </Card>
+        </Paper>
+      </Box>
 
-      {/* Add / Edit Dialog */}
-      <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
-        <DialogTitle fontWeight="bold">
-          {editingBook ? "Edit Book" : "Add New Book"}
+      {/* ── Add / Edit Dialog ── */}
+      <Dialog open={open} onClose={handleClose}
+        maxWidth="sm" fullWidth
+        PaperProps={{ sx: { borderRadius: 3 } }}>
+        <DialogTitle sx={{
+          fontWeight: "800", pb: 1,
+          borderBottom: "1px solid #f0f0f0",
+        }}>
+          {editingBook ? "✏️ Edit Book" : "➕ Add New Book"}
         </DialogTitle>
-        <DialogContent>
-          <Box component="form" id="book-form"
+        <DialogContent sx={{ pt: 3 }}>
+          <Box
+            component="form"
+            id="book-form"
             onSubmit={handleSubmit(onSubmit)}
-            sx={{ display: "flex", flexDirection: "column", gap: 0 }}>
-            <Grid container spacing={2} sx={{ mt: 0.5 }}>
+          >
+            <Grid container spacing={2}>
               <Grid item xs={6}>
-                <TextField label="Title" fullWidth
+                <TextField
+                  label="Title *" fullWidth
                   {...register("title")}
                   error={!!errors.title}
-                  helperText={errors.title?.message} />
+                  helperText={errors.title?.message}
+                  size="small"
+                />
               </Grid>
               <Grid item xs={6}>
-                <TextField label="Author" fullWidth
+                <TextField
+                  label="Author *" fullWidth
                   {...register("author")}
                   error={!!errors.author}
-                  helperText={errors.author?.message} />
+                  helperText={errors.author?.message}
+                  size="small"
+                />
               </Grid>
               <Grid item xs={6}>
-                <TextField label="Genre" fullWidth
+                <TextField
+                  label="Genre *" fullWidth
                   {...register("genre")}
                   error={!!errors.genre}
-                  helperText={errors.genre?.message} />
+                  helperText={errors.genre?.message}
+                  size="small"
+                />
               </Grid>
               <Grid item xs={6}>
-                <TextField label="ISBN" fullWidth
+                <TextField
+                  label="ISBN *" fullWidth
                   {...register("isbn")}
                   error={!!errors.isbn}
-                  helperText={errors.isbn?.message} />
+                  helperText={errors.isbn?.message}
+                  size="small"
+                />
               </Grid>
               <Grid item xs={6}>
-                <TextField label="Price (₹)" type="number" fullWidth
+                <TextField
+                  label="Price (₹) *" type="number" fullWidth
                   {...register("price")}
                   error={!!errors.price}
-                  helperText={errors.price?.message} />
+                  helperText={errors.price?.message}
+                  size="small"
+                />
               </Grid>
               <Grid item xs={6}>
-                <TextField label="Stock" type="number" fullWidth
+                <TextField
+                  label="Stock *" type="number" fullWidth
                   {...register("stock")}
                   error={!!errors.stock}
-                  helperText={errors.stock?.message} />
+                  helperText={errors.stock?.message}
+                  size="small"
+                />
               </Grid>
               <Grid item xs={12}>
-                <TextField label="Image URL" fullWidth
+                <TextField
+                  label="Image URL" fullWidth
                   {...register("imageUrl")}
                   error={!!errors.imageUrl}
-                  helperText={errors.imageUrl?.message} />
+                  helperText={errors.imageUrl?.message ||
+                    "Paste a direct image link (https://...)"}
+                  size="small"
+                />
               </Grid>
               <Grid item xs={12}>
-                <TextField label="Description" fullWidth multiline rows={3}
+                <TextField
+                  label="Description" fullWidth
+                  multiline rows={3}
                   {...register("description")}
                   error={!!errors.description}
-                  helperText={errors.description?.message} />
+                  helperText={errors.description?.message}
+                  size="small"
+                />
               </Grid>
             </Grid>
           </Box>
         </DialogContent>
-        <DialogActions sx={{ px: 3, pb: 3 }}>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button type="submit" form="book-form"
-            variant="contained" sx={{ borderRadius: 2 }}>
+        <DialogActions sx={{
+          px: 3, pb: 3, pt: 2,
+          borderTop: "1px solid #f0f0f0",
+          gap: 1,
+        }}>
+          <Button onClick={handleClose}
+            sx={{ borderRadius: 2 }}>
+            Cancel
+          </Button>
+          <Button
+            type="submit"
+            form="book-form"
+            variant="contained"
+            sx={{ borderRadius: 2, px: 3, fontWeight: 600 }}
+          >
             {editingBook ? "Update Book" : "Create Book"}
           </Button>
         </DialogActions>
       </Dialog>
 
-      {/* Delete Confirm Dialog */}
-      <Dialog open={!!deleteConfirm}
-        onClose={() => setDeleteConfirm(null)}>
-        <DialogTitle>Delete Book?</DialogTitle>
+      {/* ── Delete Confirm Dialog ── */}
+      <Dialog
+        open={!!deleteConfirm}
+        onClose={() => setDeleteConfirm(null)}
+        PaperProps={{ sx: { borderRadius: 3 } }}
+      >
+        <DialogTitle fontWeight="800">
+          🗑️ Delete Book?
+        </DialogTitle>
         <DialogContent>
-          <Typography>
+          <Typography color="text.secondary">
             Are you sure you want to delete this book?
-            This action cannot be undone.
+            This action <strong>cannot be undone</strong> and will
+            permanently remove it from the inventory.
           </Typography>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setDeleteConfirm(null)}>Cancel</Button>
-          <Button color="error" variant="contained"
-            onClick={() => handleDelete(deleteConfirm)}
+        <DialogActions sx={{ px: 3, pb: 3, gap: 1 }}>
+          <Button onClick={() => setDeleteConfirm(null)}
             sx={{ borderRadius: 2 }}>
-            Delete
+            Cancel
+          </Button>
+          <Button
+            color="error"
+            variant="contained"
+            onClick={() => handleDelete(deleteConfirm)}
+            sx={{ borderRadius: 2, fontWeight: 600 }}
+          >
+            Yes, Delete
           </Button>
         </DialogActions>
       </Dialog>

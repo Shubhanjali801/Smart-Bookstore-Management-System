@@ -4,9 +4,8 @@ import {
 import { FilterList } from "@mui/icons-material"
 
 const genres = [
-  "All", "Programming", "Fiction", "Classic",
-  "Self Help", "Finance", "Business",
-  "Computer Science", "Database", "Fantasy",
+  "All", "Programming", "Psychology","Biography","Fiction","Nonfiction", "Classic"," Philosophy","Suspense","Horror",
+  "Self Help", "Finance", "Business"," Spirituality","Memoir","Poetry","Science Fiction","Comics"," Christian","Classics","Computer Science", "Database", "Fantasy",
 ]
 
 const BookFilter = ({ selectedGenre, onGenreChange,
@@ -53,7 +52,7 @@ const BookFilter = ({ selectedGenre, onGenreChange,
                 borderRadius: 2,
                 cursor: "pointer",
                 fontWeight: isActive ? 600 : 400,
-                fontSize: "13px",
+                fontSize: "16px",
                 color: isActive ? "#fff" : "#555",
                 bgcolor: isActive ? "primary.main" : "transparent",
                 border: isActive
