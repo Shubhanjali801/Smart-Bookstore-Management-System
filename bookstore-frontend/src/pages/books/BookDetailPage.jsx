@@ -25,8 +25,10 @@ const BookDetailPage = () => {
   }, [dispatch, id])
 
   if (isLoading) return (
-    <Box sx={{ display: "flex", justifyContent: "center",
-      alignItems: "center", minHeight: "80vh" }}>
+    <Box sx={{
+      display: "flex", justifyContent: "center",
+      alignItems: "center", minHeight: "80vh"
+    }}>
       <CircularProgress size={48} />
     </Box>
   )
@@ -85,12 +87,15 @@ const BookDetailPage = () => {
         px: { xs: 2, md: 4 },
         py: 4,
       }}>
-        <Box sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" },
-          gap: 4,
-          alignItems: "flex-start",
-        }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            gap: { xs: 3, md: 6 },
+            alignItems: "flex-start",
+            justifyContent: "center", // centers layout nicely
+          }}
+        >
 
           {/* ── LEFT: Image + Info Cards ── */}
           <Box sx={{
@@ -157,8 +162,10 @@ const BookDetailPage = () => {
                   ? "#D1C4E9" : "#FFCDD2"}`,
               }}>
                 <Inventory2 fontSize="small"
-                  sx={{ color: book.stock > 0
-                    ? "#534AB7" : "#E24B4A" }} />
+                  sx={{
+                    color: book.stock > 0
+                      ? "#534AB7" : "#E24B4A"
+                  }} />
                 <Typography variant="caption"
                   color="text.secondary"
                   display="block" mt={0.5}>
@@ -174,7 +181,13 @@ const BookDetailPage = () => {
           </Box>
 
           {/* ── RIGHT: Details ── */}
-          <Box sx={{ flex: 1, minWidth: 0 }}>
+          <Box
+            sx={{
+              flex: 1,
+              minWidth: 0,
+              maxWidth: 700,   // limits right panel width
+            }}
+          >
             <Paper elevation={0} sx={{
               borderRadius: 3, p: { xs: 3, md: 4 },
               border: "1px solid #e8e8e8",
@@ -202,7 +215,7 @@ const BookDetailPage = () => {
               </Stack>
 
               {/* Title */}
-              <Typography variant="h3" fontWeight="800"
+              <Typography variant="h4" fontWeight="800"
                 color="#1a1a2e"
                 sx={{ lineHeight: 1.2, mb: 1.5 }}>
                 {book.title}
@@ -223,8 +236,10 @@ const BookDetailPage = () => {
               {/* Description */}
               <Typography variant="body1"
                 color="text.secondary"
-                sx={{ lineHeight: 1.9, mb: 4,
-                  fontSize: "15px" }}>
+                sx={{
+                  lineHeight: 1.9, mb: 4,
+                  fontSize: "15px"
+                }}>
                 {book.description ||
                   "No description available for this book."}
               </Typography>
@@ -246,8 +261,10 @@ const BookDetailPage = () => {
                     : "✗ Out of Stock"}
                   color={book.stock > 0 ? "success" : "error"}
                   variant="outlined"
-                  sx={{ fontWeight: 600, px: 1,
-                    fontSize: "13px" }}
+                  sx={{
+                    fontWeight: 600, px: 1,
+                    fontSize: "13px"
+                  }}
                 />
               </Box>
 
@@ -310,18 +327,28 @@ const BookDetailPage = () => {
                   </Typography>
                 </Box>
                 {[
-                  { label: "Author",
-                    value: book.author },
-                  { label: "Genre",
-                    value: book.genre },
-                  { label: "ISBN",
-                    value: book.isbn },
-                  { label: "Price",
-                    value: `₹${book.price}` },
-                  { label: "Availability",
+                  {
+                    label: "Author",
+                    value: book.author
+                  },
+                  {
+                    label: "Genre",
+                    value: book.genre
+                  },
+                  {
+                    label: "ISBN",
+                    value: book.isbn
+                  },
+                  {
+                    label: "Price",
+                    value: `₹${book.price}`
+                  },
+                  {
+                    label: "Availability",
                     value: book.stock > 0
                       ? `In Stock (${book.stock} copies)`
-                      : "Out of Stock" },
+                      : "Out of Stock"
+                  },
                 ].map(({ label, value }, i) => (
                   <Box key={label} sx={{
                     display: "flex",
