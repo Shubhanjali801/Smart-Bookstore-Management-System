@@ -66,13 +66,13 @@ const PaymentForm = ({ shippingAddress }) => {
       }))
       dispatch(createOrder({ items: orderItems, shippingAddress }))
     }
-  }, [])
+  }, [items, shippingAddress, dispatch])
 
   useEffect(() => {
     if (createdOrder?._id) {
       dispatch(createPaymentIntent(createdOrder._id))
     }
-  }, [createdOrder])
+  }, [createdOrder, dispatch])
 
   const handlePay = async (e) => {
     e.preventDefault()
@@ -195,7 +195,7 @@ const CheckoutPage = () => {
 
   useEffect(() => {
     if (items.length === 0) navigate("/cart")
-  }, [])
+  }, [items, navigate])
 
   const onShippingSubmit = (data) => {
     setShippingAddress(data.shippingAddress)
