@@ -6,8 +6,7 @@ import {
 import { Search, Clear } from "@mui/icons-material"
 
 const suggestions = [
-  "Non-fiction", "Fiction", "Self-help", "Programming", "Finance", "Psychology"
-]
+ "Psychology", "Business","Memoir","Poetry" ]
 
 const BookSearch = ({ value, onChange, onClear }) => {
   const [focused, setFocused] = useState(false)

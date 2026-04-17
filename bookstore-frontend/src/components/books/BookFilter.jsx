@@ -4,8 +4,8 @@ import {
 import { FilterList } from "@mui/icons-material"
 
 const genres = [
-  "All", "Programming", "Psychology","Biography","Fiction","Nonfiction", "Classic"," Philosophy","Suspense","Horror",
-  "Self Help", "Finance", "Business"," Spirituality","Memoir","Poetry","Science Fiction","Comics"," Christian","Classics","Computer Science", "Database", "Fantasy",
+  "All", "Programming", "Psychology","Biography","Fiction","Nonfiction", "Classic",
+  "Self-help", "Finance", "Business","Memoir","Poetry","Computer Science", "Database", "Fantasy",
 ]
 
 const BookFilter = ({ selectedGenre, onGenreChange,
