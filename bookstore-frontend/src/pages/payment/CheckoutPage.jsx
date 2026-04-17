@@ -227,7 +227,7 @@ const CheckoutPage = () => {
           startIcon={<ArrowBack />}
           onClick={() => navigate("/cart")}
           variant="outlined"
-          size="small"
+          size="medium"
           sx={{ borderRadius: 2 }}
         >
           Back to Cart
@@ -389,7 +389,7 @@ const CheckoutPage = () => {
                       📍 {shippingAddress}
                     </Typography>
                   </Box>
-                  <Button size="small"
+                  <Button size="medium"
                     onClick={() => setActiveStep(0)}
                     sx={{ fontSize: "12px", borderRadius: 2 }}>
                     Change
@@ -492,7 +492,7 @@ const CheckoutPage = () => {
                 <Typography variant="body2" color="text.secondary">
                   Delivery
                 </Typography>
-                <Chip label="FREE" size="small" color="success"
+                <Chip label="FREE" size="medium" color="success"
                   sx={{
                     height: 20, fontSize: "11px",
                     fontWeight: 700
@@ -555,7 +555,7 @@ const CheckoutPage = () => {
             <Stack direction="row" spacing={1} justifyContent="center">
               {["💳 Visa", "💳 Mastercard", "💳 RuPay", "🏦 UPI"]
                 .map((p) => (
-                  <Chip key={p} label={p} size="small"
+                  <Chip key={p} label={p} size="medium"
                     variant="outlined"
                     sx={{ fontSize: "11px" }} />
                 ))}

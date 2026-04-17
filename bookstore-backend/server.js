@@ -10,7 +10,19 @@ connectDB();
 const app = express();
 
 // ── MIDDLEWARE ──
-app.use(cors());
+
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'https://bookstorefrontend-m2vv.vercel.app//', // ← add after Vercel deploy
+    '*' // ← temporarily allow all during testing
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}))
+
 
 // IMPORTANT: Stripe webhook needs raw body BEFORE express.json()
 app.use('/api/payment/webhook',

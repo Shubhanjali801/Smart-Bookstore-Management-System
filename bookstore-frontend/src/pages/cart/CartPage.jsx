@@ -98,7 +98,7 @@ const CartPage = () => {
               Your Items ({items.length})
             </Typography>
             <Button
-              size="small"
+              size="medium"
               color="error"
               variant="outlined"
               startIcon={<DeleteSweep />}
@@ -175,7 +175,7 @@ const CartPage = () => {
                     color="text.secondary" mb={0.8}>
                     by {item.author}
                   </Typography>
-                  <Chip label={item.genre} size="small"
+                  <Chip label={item.genre} size="medium"
                     color="primary" variant="outlined"
                     sx={{ fontSize: "11px", height: 22 }} />
                 </Box>
@@ -212,7 +212,7 @@ const CartPage = () => {
                     borderRadius: 2, overflow: "hidden",
                     bgcolor: "#f8f7ff",
                   }}>
-                    <IconButton size="small"
+                    <IconButton size="medium"
                       onClick={() => dispatch(updateQuantity({
                         id: item._id,
                         quantity: Math.max(1, item.quantity - 1),
@@ -228,7 +228,7 @@ const CartPage = () => {
                     }}>
                       {item.quantity}
                     </Typography>
-                    <IconButton size="small"
+                    <IconButton size="medium"
                       onClick={() => dispatch(updateQuantity({
                         id: item._id,
                         quantity: Math.min(
@@ -303,7 +303,7 @@ const CartPage = () => {
                 fontWeight="bold" color="#1a1a2e">
                 Order Summary
               </Typography>
-              <Chip label={`${items.length} items`} size="small"
+              <Chip label={`${items.length} items`} size="medium"
                 color="primary" variant="outlined"
                 sx={{ ml: "auto", fontWeight: 600 }} />
             </Box>
@@ -359,7 +359,7 @@ const CartPage = () => {
                 <Typography color="text.secondary" variant="body2">
                   Delivery Charges
                 </Typography>
-                <Chip label="FREE" size="small" color="success"
+                <Chip label="FREE" size="medium" color="success"
                   sx={{ height: 20, fontSize: "11px",
                     fontWeight: 700 }} />
               </Box>
@@ -449,7 +449,7 @@ const CartPage = () => {
             <Stack direction="row" spacing={1} justifyContent="center">
               {["💳 Visa", "💳 Mastercard", "💳 RuPay", "🏦 UPI"]
                 .map((p) => (
-                  <Chip key={p} label={p} size="small"
+                  <Chip key={p} label={p} size="medium"
                     variant="outlined"
                     sx={{ fontSize: "11px" }} />
                 ))}

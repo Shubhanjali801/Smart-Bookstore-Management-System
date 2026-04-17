@@ -14,7 +14,7 @@ const OrderStatusBadge = ({ status }) => {
     <Chip
       label={status}
       color={statusColor[status] || "default"}
-      size="small"
+      size="medium"
     />
   )
 }

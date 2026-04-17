@@ -1,3 +1,5 @@
+```
+
 bookstore-frontend/
 ├── public/
 │   ├── index.html
@@ -65,3 +67,5 @@ bookstore-frontend/
 ├── .gitignore
 ├── package.json
 └── vite.config.js
+
+```

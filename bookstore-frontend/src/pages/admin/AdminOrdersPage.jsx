@@ -68,7 +68,7 @@ const AdminOrdersPage = () => {
         </Box>
 
         {/* Filter */}
-        <FormControl size="small" sx={{ minWidth: 180 }}>
+        <FormControl size="medium" sx={{ minWidth: 180 }}>
           <InputLabel>Filter by Status</InputLabel>
           <Select
             value={filterStatus}
@@ -174,7 +174,7 @@ const AdminOrdersPage = () => {
                         label={order.paymentStatus}
                         color={order.paymentStatus === "Paid"
                           ? "success" : "warning"}
-                        size="small"
+                        size="medium"
                         sx={{ fontWeight: 600,
                           fontSize: "11px" }}
                       />
@@ -186,7 +186,7 @@ const AdminOrdersPage = () => {
                         label={order.orderStatus}
                         color={statusColor[order.orderStatus]
                           || "default"}
-                        size="small"
+                        size="medium"
                         sx={{ fontWeight: 600,
                           fontSize: "11px" }}
                       />
@@ -196,7 +196,7 @@ const AdminOrdersPage = () => {
                     <TableCell>
                       <Select
                         value={order.orderStatus}
-                        size="small"
+                        size="medium"
                         onChange={(e) => handleStatusChange(
                           order._id, e.target.value
                         )}

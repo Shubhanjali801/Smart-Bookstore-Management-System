@@ -116,7 +116,7 @@ const AdminBooksPage = () => {
           placeholder="Search by title or author..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          size="small"
+          size="medium"
           sx={{ mb: 3, maxWidth: 400 }}
           InputProps={{
             startAdornment: (
@@ -200,7 +200,7 @@ const AdminBooksPage = () => {
                     <TableCell>
                       <Chip
                         label={book.genre}
-                        size="small"
+                        size="medium"
                         color="primary"
                         variant="outlined"
                         sx={{ fontWeight: 600, fontSize: "11px" }}
@@ -219,7 +219,7 @@ const AdminBooksPage = () => {
                     <TableCell>
                       <Chip
                         label={book.stock}
-                        size="small"
+                        size="medium"
                         color={
                           book.stock < 5 ? "error" :
                           book.stock < 20 ? "warning" : "success"
@@ -232,7 +232,7 @@ const AdminBooksPage = () => {
                     <TableCell>
                       <Box sx={{ display: "flex", gap: 1 }}>
                         <IconButton
-                          size="small"
+                          size="medium"
                           onClick={() => handleOpen(book)}
                           sx={{
                             bgcolor: "#EDE7F6",
@@ -244,7 +244,7 @@ const AdminBooksPage = () => {
                           <Edit fontSize="small" />
                         </IconButton>
                         <IconButton
-                          size="small"
+                          size="medium"
                           onClick={() => setDeleteConfirm(book._id)}
                           sx={{
                             bgcolor: "#FFEBEE",
@@ -300,7 +300,7 @@ const AdminBooksPage = () => {
                   {...register("title")}
                   error={!!errors.title}
                   helperText={errors.title?.message}
-                  size="small"
+                  size="medium"
                 />
               </Grid>
               <Grid item xs={6}>
@@ -309,7 +309,7 @@ const AdminBooksPage = () => {
                   {...register("author")}
                   error={!!errors.author}
                   helperText={errors.author?.message}
-                  size="small"
+                  size="medium"
                 />
               </Grid>
               <Grid item xs={6}>
@@ -318,7 +318,7 @@ const AdminBooksPage = () => {
                   {...register("genre")}
                   error={!!errors.genre}
                   helperText={errors.genre?.message}
-                  size="small"
+                  size="medium"
                 />
               </Grid>
               <Grid item xs={6}>
@@ -327,7 +327,7 @@ const AdminBooksPage = () => {
                   {...register("isbn")}
                   error={!!errors.isbn}
                   helperText={errors.isbn?.message}
-                  size="small"
+                  size="medium"
                 />
               </Grid>
               <Grid item xs={6}>
@@ -336,7 +336,7 @@ const AdminBooksPage = () => {
                   {...register("price")}
                   error={!!errors.price}
                   helperText={errors.price?.message}
-                  size="small"
+                  size="medium"
                 />
               </Grid>
               <Grid item xs={6}>
@@ -345,7 +345,7 @@ const AdminBooksPage = () => {
                   {...register("stock")}
                   error={!!errors.stock}
                   helperText={errors.stock?.message}
-                  size="small"
+                  size="medium"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -355,7 +355,7 @@ const AdminBooksPage = () => {
                   error={!!errors.imageUrl}
                   helperText={errors.imageUrl?.message ||
                     "Paste a direct image link (https://...)"}
-                  size="small"
+                  size="medium"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -365,7 +365,7 @@ const AdminBooksPage = () => {
                   {...register("description")}
                   error={!!errors.description}
                   helperText={errors.description?.message}
-                  size="small"
+                  size="medium"
                 />
               </Grid>
             </Grid>

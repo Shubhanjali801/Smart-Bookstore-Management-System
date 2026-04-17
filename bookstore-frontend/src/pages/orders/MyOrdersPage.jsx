@@ -155,13 +155,13 @@ const MyOrdersPage = () => {
                       <Chip
                         label={order.orderStatus}
                         color={statusColor[order.orderStatus] || "default"}
-                        size="small"
+                        size="medium"
                         sx={{ fontWeight: 600 }}
                       />
                       <Chip
                         label={order.paymentStatus}
                         color={paymentColor[order.paymentStatus] || "default"}
-                        size="small"
+                        size="medium"
                         variant="outlined"
                         sx={{ fontWeight: 600 }}
                       />
@@ -225,7 +225,7 @@ const MyOrdersPage = () => {
                       </Box>
                       <Button
                         variant="contained"
-                        size="small"
+                        size="medium"
                         endIcon={<ArrowForward />}
                         onClick={() => navigate(`/orders/${order._id}`)}
                         sx={{

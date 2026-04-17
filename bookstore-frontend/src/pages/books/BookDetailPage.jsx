@@ -58,7 +58,7 @@ const BookDetailPage = () => {
         <Button
           startIcon={<ArrowBack />}
           onClick={() => navigate("/books")}
-          size="small"
+          size="medium"
           sx={{ color: "#534AB7", fontWeight: 300 }}
         >
           Back to Books
@@ -187,7 +187,7 @@ const BookDetailPage = () => {
                 <Chip
                   label={book.genre}
                   color="primary"
-                  size="small"
+                  size="medium"
                   icon={<MenuBook style={{ fontSize: 14 }} />}
                 />
                 <Typography variant="caption"

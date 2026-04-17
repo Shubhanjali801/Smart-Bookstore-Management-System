@@ -6,7 +6,7 @@ import {
 import { Search, Clear } from "@mui/icons-material"
 
 const suggestions = [
-  "Clean Code", "Fiction", "Self Help", "Programming", "Finance","Phycology"
+  "Non-fiction", "Fiction", "Self-help", "Programming", "Finance", "Psychology"
 ]
 
 const BookSearch = ({ value, onChange, onClear }) => {
@@ -16,7 +16,7 @@ const BookSearch = ({ value, onChange, onClear }) => {
     <Box sx={{ width: "100%" }}>
       <TextField
         fullWidth
-        size="medium"
+        size="small"
         placeholder="Search by title, author or genre..."
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -25,7 +25,7 @@ const BookSearch = ({ value, onChange, onClear }) => {
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
-              <Search color="action" />
+              <Search color="action" fontSize="small" />
             </InputAdornment>
           ),
           endAdornment: value && (
@@ -35,7 +35,18 @@ const BookSearch = ({ value, onChange, onClear }) => {
               </IconButton>
             </InputAdornment>
           ),
-          sx: { borderRadius: 3, bgcolor: "#fff" }
+          sx: {
+            borderRadius: 3,
+            bgcolor: "#fff",
+            height: 38,
+            fontSize: "13px",
+          }
+        }}
+        sx={{
+          "& .MuiOutlinedInput-input": {
+            py: 0.8,
+            fontSize: "13px",
+          }
         }}
       />
 
@@ -51,7 +62,7 @@ const BookSearch = ({ value, onChange, onClear }) => {
                 variant="outlined"
                 clickable
                 onClick={() => onChange(s)}
-                sx={{ fontSize: "17px", bgcolor: "#fff" }}
+                sx={{ fontSize: "12px", bgcolor: "#fff" }}
               />
             ))}
           </Stack>

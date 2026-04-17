@@ -41,7 +41,7 @@ const OrderCard = ({ order }) => {
               <Chip
                 label={order.paymentStatus}
                 color={order.paymentStatus === "Paid" ? "success" : "warning"}
-                size="small"
+                size="medium"
                 variant="outlined"
               />
             </Box>
@@ -50,7 +50,7 @@ const OrderCard = ({ order }) => {
           <Grid item xs={12} sm={3} sx={{ textAlign: "right" }}>
             <Button
               variant="outlined"
-              size="small"
+              size="medium"
               startIcon={<Visibility />}
               onClick={() => navigate(`/orders/${order._id}`)}
               sx={{ borderRadius: 2 }}

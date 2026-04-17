@@ -173,7 +173,7 @@ useEffect(() => {
             {isPaying || isLoading ? "Processing..." : "Pay Now"}
           </Button>
 
-          <Button onClick={() => setActiveStep(0)} sx={{ mt: 2 }} size="small">
+          <Button onClick={() => setActiveStep(0)} sx={{ mt: 2 }} size="medium">
             ← Back to Shipping
           </Button>
         </Box>

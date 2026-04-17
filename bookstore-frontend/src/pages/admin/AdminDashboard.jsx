@@ -107,7 +107,7 @@ const AdminDashboard = () => {
           icon={<TrendingUp fontSize="small" />}
           label="Live Data"
           color="success"
-          size="small"
+          size="medium"
           sx={{ fontWeight: 600 }}
         />
       </Box>
@@ -267,7 +267,7 @@ const AdminDashboard = () => {
               </Typography>
             </Box>
             <Button
-              size="small"
+              size="medium"
               endIcon={<ArrowForward />}
               onClick={() => navigate("/admin/orders")}
               sx={{ borderRadius: 2 }}
@@ -315,7 +315,7 @@ const AdminDashboard = () => {
                       label={order.paymentStatus}
                       color={order.paymentStatus === "Paid"
                         ? "success" : "warning"}
-                      size="small"
+                      size="medium"
                       sx={{ fontWeight: 600, fontSize: "11px" }}
                     />
                   </TableCell>
@@ -323,7 +323,7 @@ const AdminDashboard = () => {
                     <Chip
                       label={order.orderStatus}
                       color="primary"
-                      size="small"
+                      size="medium"
                       variant="outlined"
                       sx={{ fontWeight: 600, fontSize: "11px" }}
                     />
@@ -357,7 +357,7 @@ const AdminDashboard = () => {
                     <Chip
                       key={book._id}
                       label={`${book.title} (${book.stock} left)`}
-                      size="small"
+                      size="medium"
                       color="error"
                       variant="outlined"
                       sx={{ fontSize: "11px" }}

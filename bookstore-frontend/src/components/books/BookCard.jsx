@@ -44,7 +44,7 @@
 //         {/* Genre Chip */}
 //         <Chip
 //           label={book.genre || "General"}
-//           size="small"
+//           size="medium"
 //           color="primary"
 //           variant="outlined"
 //           sx={{ mb: 1 }}
@@ -97,7 +97,7 @@
 //       <CardActions sx={{ px: 2, pb: 2, gap: 1 }}>
 //         <Button
 //           variant="contained"
-//           size="small"
+//           size="medium"
 //           fullWidth
 //           startIcon={<ShoppingCart />}
 //           disabled={book.stock === 0}
@@ -108,7 +108,7 @@
 //         </Button>
 //         <Button
 //           variant="outlined"
-//           size="small"
+//           size="medium"
 //           startIcon={<Visibility />}
 //           onClick={() => navigate(`/books/${book._id}`)}
 //           sx={{ borderRadius: 2, minWidth: "auto", px: 1.5 }}
@@ -204,7 +204,7 @@ const BookCard = ({ book }) => {
 
         <Chip
           label={book.genre || "General"}
-          size="small"
+          size="medium"
           color="primary"
           variant="outlined"
           sx={{ mb: 1, fontSize: "11px", height: 22 }}
@@ -261,7 +261,7 @@ const BookCard = ({ book }) => {
       <CardActions sx={{ px: 2, pb: 2, pt: 0, gap: 1 }}>
         <Button
           variant="contained"
-          size="small"
+          size="medium"
           fullWidth
           startIcon={<ShoppingCart fontSize="small" />}
           disabled={book.stock === 0}
@@ -277,7 +277,7 @@ const BookCard = ({ book }) => {
         </Button>
         <Button
           variant="outlined"
-          size="small"
+          size="medium"
           onClick={() => navigate(`/books/${book._id}`)}
           sx={{
             borderRadius: 2,

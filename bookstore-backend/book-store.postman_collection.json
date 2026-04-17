@@ -1,0 +1,1942 @@
+{
+  "info": {
+    "_postman_id": "e8c249a4-1341-47f5-a9ff-c101fd149766",
+    "name": "book-store",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43522881"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "login",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM3MmY0NDNjZjY1OWQwMDBkOTRlYyIsImlhdCI6MTc3NTQ2NTIwNCwiZXhwIjoxNzc4MDU3MjA0fQ.EILBmLAmpeSwk_712W0UoOTAAKBGrt9CbPKhDdZpoCw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n \"email\": \"manish.dubey@gmail.com\",\r\n  \"password\": \"Manish@9012\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "login",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"priya.verma@gmail.com\",\r\n    \"password\": \"Priya@5678\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/auth/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "354"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"162-vLDvQkaC6n972oqMYDar0QAfH/I\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 06 Apr 2026 07:39:57 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"_id\": \"69d362e99d123b29b579f34d\",\n    \"name\": \"Priya Verma\",\n    \"email\": \"priya.verma@gmail.com\",\n    \"role\": \"customer\",\n    \"phone\": \"9812345678\",\n    \"address\": \"45 Civil Lines, Kanpur, UP 208001\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2MmU5OWQxMjNiMjliNTc5ZjM0ZCIsImlhdCI6MTc3NTQ2MTE5NywiZXhwIjoxNzc4MDUzMTk3fQ.iK7ey0NV-bXsP4omnmRY58tZajiPrvn73_8nT4co1L4\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "profile",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTUzNDg3MywiZXhwIjoxNzc4MTI2ODczfQ.1aggUWa2vv5wBkHFnQuWZFVHjb26lFeFg28czFLspqM",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/profile",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "profile"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "profile",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/auth/profile",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "profile"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "266"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"10a-RbT5ENgp3hqXLFvEt9hAe63/n1A\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 04:19:05 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"_id\": \"69d36aa1d9267479acee8391\",\n    \"name\": \"Admin User\",\n    \"email\": \"admin@bookstore.com\",\n    \"role\": \"admin\",\n    \"phone\": \"9000000001\",\n    \"address\": \"1 Admin Office, Tech Park, Bengaluru, KA 560001\",\n    \"createdAt\": \"2026-04-06T08:11:13.308Z\",\n    \"updatedAt\": \"2026-04-06T08:11:13.308Z\",\n    \"__v\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "register",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Manish Dubey\",\r\n  \"email\": \"manish.dubey@gmail.com\",\r\n  \"password\": \"Manish@9012\",\r\n  \"phone\": \"9553456789\",\r\n  \"address\": \"14 Indiranagar, Bengaluru, KA 560038\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "register",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Manish Dubey\",\r\n  \"email\": \"manish.dubey@gmail.com\",\r\n  \"password\": \"Manish@9012\",\r\n  \"phone\": \"9553456789\",\r\n  \"address\": \"14 Indiranagar, Bengaluru, KA 560038\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "289"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"121-vSfI/OyQI2n/N2RnGIU0Vznv+f0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 04:20:01 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"_id\": \"69d485f1e279806d938d31d1\",\n    \"name\": \"Manish Dubey\",\n    \"email\": \"manish.dubey@gmail.com\",\n    \"role\": \"customer\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDQ4NWYxZTI3OTgwNmQ5MzhkMzFkMSIsImlhdCI6MTc3NTUzNTYwMSwiZXhwIjoxNzc4MTI3NjAxfQ.lRoVHBHi4N8fKte4vpyzFZB9x8g5h4aUhSPFkM8rQzo\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "book",
+      "item": [
+        {
+          "name": "getBook",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTUzNTg0NiwiZXhwIjoxNzc4MTI3ODQ2fQ.FaB71XOcowIM-3XZEjnJJpSPVHyi7csL7jTLlGLU6Aw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Clean Code\",\r\n  \"author\": \"Robert C. Martin\",\r\n  \"genre\": \"Programming\",\r\n  \"price\": 499,\r\n  \"stock\": 50,\r\n  \"isbn\": \"9780132350884\",\r\n  \"description\": \"A handbook of agile software craftsmanship that teaches programmers how to write clean, readable and maintainable code.\",\r\n  \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/books",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "books"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "getBook",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"Clean Code\",\r\n  \"author\": \"Robert C. Martin\",\r\n  \"genre\": \"Programming\",\r\n  \"price\": 499,\r\n  \"stock\": 50,\r\n  \"isbn\": \"9780132350884\",\r\n  \"description\": \"A handbook of agile software craftsmanship that teaches programmers how to write clean, readable and maintainable code.\",\r\n  \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/books",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "books"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "4585"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"11e9-DNwQymIL1vcvIYT+rLRDSpN+/oI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 04:29:11 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"books\": [\n        {\n            \"_id\": \"69d487cdab97e9ecfeed17a8\",\n            \"title\": \"To Kill a Mockingbird\",\n            \"author\": \"Harper Lee\",\n            \"genre\": \"Classic\",\n            \"price\": 229,\n            \"stock\": 55,\n            \"isbn\": \"9780061935466\",\n            \"description\": \"A Pulitzer Prize winning novel set in the American South dealing with serious issues of racial injustice and moral growth.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780061935466-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:27:57.797Z\",\n            \"updatedAt\": \"2026-04-07T04:27:57.797Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d487bcab97e9ecfeed17a7\",\n            \"title\": \"Design Patterns\",\n            \"author\": \"Gang of Four\",\n            \"genre\": \"Computer Science\",\n            \"price\": 699,\n            \"stock\": 25,\n            \"isbn\": \"9780201633610\",\n            \"description\": \"The classic book on software design patterns that every developer should read, covering 23 fundamental patterns.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780201633610-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:27:40.253Z\",\n            \"updatedAt\": \"2026-04-07T04:27:40.253Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d487afab97e9ecfeed17a6\",\n            \"title\": \"Rich Dad Poor Dad\",\n            \"author\": \"Robert T. Kiyosaki\",\n            \"genre\": \"Finance\",\n            \"price\": 349,\n            \"stock\": 90,\n            \"isbn\": \"9781612680194\",\n            \"description\": \"A personal finance book that challenges conventional thinking about money and investing through the story of two fathers.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781612680194-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:27:27.935Z\",\n            \"updatedAt\": \"2026-04-07T04:27:27.935Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d487a5ab97e9ecfeed17a5\",\n            \"title\": \"JavaScript: The Good Parts\",\n            \"author\": \"Douglas Crockford\",\n            \"genre\": \"Programming\",\n            \"price\": 449,\n            \"stock\": 45,\n            \"isbn\": \"9780596517748\",\n            \"description\": \"A guide to the good parts of JavaScript that helps developers write better, more reliable and maintainable JavaScript code.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780596517748-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:27:17.438Z\",\n            \"updatedAt\": \"2026-04-07T04:27:17.438Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48798ab97e9ecfeed17a4\",\n            \"title\": \"The Great Gatsby\",\n            \"author\": \"F. Scott Fitzgerald\",\n            \"genre\": \"Classic\",\n            \"price\": 199,\n            \"stock\": 60,\n            \"isbn\": \"9780743273565\",\n            \"description\": \"A classic American novel set in the Jazz Age exploring themes of wealth, love, idealism and social upheaval.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:27:04.746Z\",\n            \"updatedAt\": \"2026-04-07T04:27:04.746Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d4878eab97e9ecfeed17a3\",\n            \"title\": \"Atomic Habits\",\n            \"author\": \"James Clear\",\n            \"genre\": \"Self Help\",\n            \"price\": 399,\n            \"stock\": 80,\n            \"isbn\": \"9780735211292\",\n            \"description\": \"A practical guide on how tiny changes in behavior can lead to remarkable results through the power of habits.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:26:54.359Z\",\n            \"updatedAt\": \"2026-04-07T04:26:54.359Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48782ab97e9ecfeed17a2\",\n            \"title\": \"Introduction to Algorithms\",\n            \"author\": \"Thomas H. Cormen\",\n            \"genre\": \"Computer Science\",\n            \"price\": 899,\n            \"stock\": 30,\n            \"isbn\": \"9780262033848\",\n            \"description\": \"A comprehensive textbook covering a broad range of algorithms in depth with rigorous yet accessible explanations.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780262033848-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:26:42.782Z\",\n            \"updatedAt\": \"2026-04-07T04:26:42.782Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48774ab97e9ecfeed17a1\",\n            \"title\": \"The Alchemist\",\n            \"author\": \"Paulo Coelho\",\n            \"genre\": \"Fiction\",\n            \"price\": 249,\n            \"stock\": 75,\n            \"isbn\": \"9780061122415\",\n            \"description\": \"A philosophical novel about a young Andalusian shepherd who travels to Egypt after having a recurring dream of finding treasure there.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780061122415-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:26:28.816Z\",\n            \"updatedAt\": \"2026-04-07T04:26:28.816Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d4875aab97e9ecfeed17a0\",\n            \"title\": \"Harry Potter and the Philosopher's Stone\",\n            \"author\": \"J.K. Rowling\",\n            \"genre\": \"Fantasy\",\n            \"price\": 299,\n            \"stock\": 100,\n            \"isbn\": \"9780747532699\",\n            \"description\": \"The first book in the Harry Potter series following a young boy who discovers he is a wizard and attends Hogwarts School of Witchcraft and Wizardry.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780747532699-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:26:02.583Z\",\n            \"updatedAt\": \"2026-04-07T04:26:02.583Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48749ab97e9ecfeed179f\",\n            \"title\": \"The Pragmatic Programmer\",\n            \"author\": \"Andrew Hunt\",\n            \"genre\": \"Programming\",\n            \"price\": 549,\n            \"stock\": 40,\n            \"isbn\": \"9780135957059\",\n            \"description\": \"A classic guide for software developers covering tips, techniques and philosophies for becoming a better programmer.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:25:45.938Z\",\n            \"updatedAt\": \"2026-04-07T04:25:45.938Z\",\n            \"__v\": 0\n        }\n    ],\n    \"total\": 11,\n    \"page\": 1,\n    \"pages\": 2\n}"
+            }
+          ]
+        },
+        {
+          "name": "createBook",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTUzNTg0NiwiZXhwIjoxNzc4MTI3ODQ2fQ.FaB71XOcowIM-3XZEjnJJpSPVHyi7csL7jTLlGLU6Aw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Zero to One\",\r\n  \"author\": \"Peter Thiel\",\r\n  \"genre\": \"Business\",\r\n  \"price\": 419,\r\n  \"stock\": 45,\r\n  \"isbn\": \"9780804139021\",\r\n  \"description\": \"Notes on startups and how to build the future, exploring how to create truly innovative companies that go from zero to one.\",\r\n  \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780804139021-L.jpg\"\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/books",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "books"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "createBook",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"Clean Code\",\r\n  \"author\": \"Robert C. Martin\",\r\n  \"genre\": \"Programming\",\r\n  \"price\": 499,\r\n  \"stock\": 50,\r\n  \"isbn\": \"9780132350884\",\r\n  \"description\": \"A handbook of agile software craftsmanship that teaches programmers how to write clean, readable and maintainable code.\",\r\n  \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/books",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "books"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "444"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1bc-8lc+fhWuzMSB1J4eBrW04Q/5DkE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 04:24:55 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"title\": \"Clean Code\",\n    \"author\": \"Robert C. Martin\",\n    \"genre\": \"Programming\",\n    \"price\": 499,\n    \"stock\": 50,\n    \"isbn\": \"9780132350884\",\n    \"description\": \"A handbook of agile software craftsmanship that teaches programmers how to write clean, readable and maintainable code.\",\n    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg\",\n    \"_id\": \"69d48717ab97e9ecfeed179e\",\n    \"createdAt\": \"2026-04-07T04:24:55.753Z\",\n    \"updatedAt\": \"2026-04-07T04:24:55.753Z\",\n    \"__v\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "getBookById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTUzNTg0NiwiZXhwIjoxNzc4MTI3ODQ2fQ.FaB71XOcowIM-3XZEjnJJpSPVHyi7csL7jTLlGLU6Aw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/books?genre=Self help",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "books"
+              ],
+              "query": [
+                {
+                  "key": "genre",
+                  "value": "Self help"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "getBookById",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/books/69d487cdab97e9ecfeed17a8",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "books",
+                    "69d487cdab97e9ecfeed17a8"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "448"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1c0-eL+u3hu8G3P1tXLd76wkGY3FzRk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 04:30:52 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"_id\": \"69d487cdab97e9ecfeed17a8\",\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"genre\": \"Classic\",\n    \"price\": 229,\n    \"stock\": 55,\n    \"isbn\": \"9780061935466\",\n    \"description\": \"A Pulitzer Prize winning novel set in the American South dealing with serious issues of racial injustice and moral growth.\",\n    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780061935466-L.jpg\",\n    \"createdAt\": \"2026-04-07T04:27:57.797Z\",\n    \"updatedAt\": \"2026-04-07T04:27:57.797Z\",\n    \"__v\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "updateBook",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTUzNTg0NiwiZXhwIjoxNzc4MTI3ODQ2fQ.FaB71XOcowIM-3XZEjnJJpSPVHyi7csL7jTLlGLU6Aw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"To Kill a Mockingbird\",\r\n  \"author\": \"Harper Lee\",\r\n  \"genre\": \"Classic\",\r\n  \"price\": 399,\r\n  \"stock\": 50,\r\n  \"isbn\": \"978061935466\",\r\n  \"description\": \"A Pulitzer Prize winning novel set in the American South dealing with serious issues of racial injustice and moral growth.\",\r\n  \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780061935466-L.jpg\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/books/69d487cdab97e9ecfeed17a8",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "books",
+                "69d487cdab97e9ecfeed17a8"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "updateBook",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"title\": \"To Kill a Mockingbird\",\r\n  \"author\": \"Harper Lee\",\r\n  \"genre\": \"Classic\",\r\n  \"price\": 399,\r\n  \"stock\": 50,\r\n  \"isbn\": \"978061935466\",\r\n  \"description\": \"A Pulitzer Prize winning novel set in the American South dealing with serious issues of racial injustice and moral growth.\",\r\n  \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780061935466-L.jpg\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/books/69d487cdab97e9ecfeed17a8",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "books",
+                    "69d487cdab97e9ecfeed17a8"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "447"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1bf-FJ6qTjEjXbDZQ44zlRuH/FZLS24\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 04:33:03 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"_id\": \"69d487cdab97e9ecfeed17a8\",\n    \"title\": \"To Kill a Mockingbird\",\n    \"author\": \"Harper Lee\",\n    \"genre\": \"Classic\",\n    \"price\": 399,\n    \"stock\": 50,\n    \"isbn\": \"978061935466\",\n    \"description\": \"A Pulitzer Prize winning novel set in the American South dealing with serious issues of racial injustice and moral growth.\",\n    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780061935466-L.jpg\",\n    \"createdAt\": \"2026-04-07T04:27:57.797Z\",\n    \"updatedAt\": \"2026-04-07T04:33:03.687Z\",\n    \"__v\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "deleteBook",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTUzNTg0NiwiZXhwIjoxNzc4MTI3ODQ2fQ.FaB71XOcowIM-3XZEjnJJpSPVHyi7csL7jTLlGLU6Aw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/books/69d48774ab97e9ecfeed17a1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "books",
+                "69d48774ab97e9ecfeed17a1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "deleteBook",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/books/69d48774ab97e9ecfeed17a1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "books",
+                    "69d48774ab97e9ecfeed17a1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "39"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"27-2sU+wH8LsO2HgYqDa0daGODIV30\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 04:34:03 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Book deleted successfully\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "getBookBygenre",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTUzNTg0NiwiZXhwIjoxNzc4MTI3ODQ2fQ.FaB71XOcowIM-3XZEjnJJpSPVHyi7csL7jTLlGLU6Aw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/books?genre=Self help",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "books"
+              ],
+              "query": [
+                {
+                  "key": "genre",
+                  "value": "Self help"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "getBookBygenre",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/books?genre=Self help",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "books"
+                  ],
+                  "query": [
+                    {
+                      "key": "genre",
+                      "value": "Self help"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "2393"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"959-8+bdocfA0bI0mbQFKD450LAco9g\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 08 Apr 2026 11:22:43 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"books\": [\n        {\n            \"_id\": \"69d6396b0fcdd3b1f11f7c2c\",\n            \"title\": \"Build Don't Talk\",\n            \"author\": \"Raj Shamani\",\n            \"genre\": \"Self help\",\n            \"price\": 268,\n            \"stock\": 23,\n            \"isbn\": \"0143459686\",\n            \"description\": \"Build, Don't Talk: Things You Wish You Were Taught in School | A Real-World Manual for Personal Transformation | Learn Practical Skills – Finance, Networking, Decision Making & More.\",\n            \"imageUrl\": \"https://5.imimg.com/data5/SELLER/Default/2023/8/331901628/XH/TE/EH/61707506/build-don-t-talk-book.jpeg\",\n            \"createdAt\": \"2026-04-08T11:18:03.933Z\",\n            \"updatedAt\": \"2026-04-08T11:18:03.933Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48c754d443b9da6663faf\",\n            \"title\": \"The 7 Habits of Highly Effective People\",\n            \"author\": \"Stephen R. Covey\",\n            \"genre\": \"Self Help\",\n            \"price\": 329,\n            \"stock\": 74,\n            \"isbn\": \"9781982137274\",\n            \"description\": \"A powerful guide on personal and professional effectiveness based on principle-centered leadership and character ethics.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781982137274-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:47:49.087Z\",\n            \"updatedAt\": \"2026-04-07T04:56:42.333Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48b8e4d443b9da6663fac\",\n            \"title\": \"Deep Work\",\n            \"author\": \"Cal Newport\",\n            \"genre\": \"Self Help\",\n            \"price\": 369,\n            \"stock\": 48,\n            \"isbn\": \"9781455586691\",\n            \"description\": \"Rules for focused success in a distracted world showing how deep work produces remarkable results in today's economy.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781455586691-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:43:58.761Z\",\n            \"updatedAt\": \"2026-04-08T05:51:52.038Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48b474d443b9da6663fa9\",\n            \"title\": \"Think and Grow Rich\",\n            \"author\": \"Napoleon Hill\",\n            \"genre\": \"Self Help\",\n            \"price\": 279,\n            \"stock\": 68,\n            \"isbn\": \"9781585424337\",\n            \"description\": \"A timeless classic on success and personal development based on interviews with the most successful people of the early 20th century.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781585424337-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:42:47.259Z\",\n            \"updatedAt\": \"2026-04-07T05:00:04.370Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d4878eab97e9ecfeed17a3\",\n            \"title\": \"Atomic Habits\",\n            \"author\": \"James Clear\",\n            \"genre\": \"Self Help\",\n            \"price\": 399,\n            \"stock\": 74,\n            \"isbn\": \"9780735211292\",\n            \"description\": \"A practical guide on how tiny changes in behavior can lead to remarkable results through the power of habits.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:26:54.359Z\",\n            \"updatedAt\": \"2026-04-08T05:51:51.694Z\",\n            \"__v\": 0\n        }\n    ],\n    \"total\": 5,\n    \"page\": 1,\n    \"pages\": 1\n}"
+            }
+          ]
+        },
+        {
+          "name": "getBookBysearch",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTUzNTg0NiwiZXhwIjoxNzc4MTI3ODQ2fQ.FaB71XOcowIM-3XZEjnJJpSPVHyi7csL7jTLlGLU6Aw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/books?search=clean",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "books"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "clean"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "getBookBysearch",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/books?search=clean",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "books"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "clean"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "485"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1e5-RSADfPCzaCcxDiQ+8VRKRjX/Oho\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 08 Apr 2026 11:23:55 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"books\": [\n        {\n            \"_id\": \"69d48717ab97e9ecfeed179e\",\n            \"title\": \"Clean Code\",\n            \"author\": \"Robert C. Martin\",\n            \"genre\": \"Programming\",\n            \"price\": 499,\n            \"stock\": 48,\n            \"isbn\": \"9780132350884\",\n            \"description\": \"A handbook of agile software craftsmanship that teaches programmers how to write clean, readable and maintainable code.\",\n            \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg\",\n            \"createdAt\": \"2026-04-07T04:24:55.753Z\",\n            \"updatedAt\": \"2026-04-07T04:59:00.524Z\",\n            \"__v\": 0\n        }\n    ],\n    \"total\": 1,\n    \"page\": 1,\n    \"pages\": 1\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "orderBook",
+      "item": [
+        {
+          "name": "createOrder",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTUzNTg0NiwiZXhwIjoxNzc4MTI3ODQ2fQ.FaB71XOcowIM-3XZEjnJJpSPVHyi7csL7jTLlGLU6Aw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"items\": [\r\n    { \"bookId\": \"69d487cdab97e9ecfeed17a8\", \"quantity\": 2 },\r\n    { \"bookId\": \"69d4878eab97e9ecfeed17a3\", \"quantity\": 3 },\r\n    { \"bookId\": \"69d48749ab97e9ecfeed179f\", \"quantity\": 1 },\r\n    { \"bookId\": \"69d48b8e4d443b9da6663fac\", \"quantity\": 4}\r\n  ],\r\n  \"shippingAddress\": \"12 Tech Park, Bengaluru, KA 560001\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "createOrder",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"items\": [\r\n    { \"bookId\": \"69d487cdab97e9ecfeed17a8\", \"quantity\": 1 },\r\n    { \"bookId\": \"69d487afab97e9ecfeed17a6\", \"quantity\": 2 }\r\n  ],\r\n  \"shippingAddress\": \"12 MG Road, Lucknow, UP 226001\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/orders",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "orders"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "682"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2aa-9nvd2lj1/WvjS/2SC/HLOoCSvvE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 04:50:23 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"order\": {\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 1097,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"12 MG Road, Lucknow, UP 226001\",\n        \"_id\": \"69d48d0e4d443b9da6663fb1\",\n        \"createdAt\": \"2026-04-07T04:50:22.045Z\",\n        \"updatedAt\": \"2026-04-07T04:50:22.045Z\",\n        \"__v\": 0\n    },\n    \"orderItems\": [\n        {\n            \"_id\": \"69d48d0e4d443b9da6663fb2\",\n            \"orderId\": \"69d48d0e4d443b9da6663fb1\",\n            \"bookId\": {\n                \"_id\": \"69d487cdab97e9ecfeed17a8\",\n                \"title\": \"To Kill a Mockingbird\",\n                \"price\": 399\n            },\n            \"quantity\": 1,\n            \"price\": 399,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48d0f4d443b9da6663fb3\",\n            \"orderId\": \"69d48d0e4d443b9da6663fb1\",\n            \"bookId\": {\n                \"_id\": \"69d487afab97e9ecfeed17a6\",\n                \"title\": \"Rich Dad Poor Dad\",\n                \"price\": 349\n            },\n            \"quantity\": 2,\n            \"price\": 349,\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "getMyOrders",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTUzNTg0NiwiZXhwIjoxNzc4MTI3ODQ2fQ.FaB71XOcowIM-3XZEjnJJpSPVHyi7csL7jTLlGLU6Aw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"items\": [\r\n    { \"bookId\": \"69d487cdab97e9ecfeed17a8\", \"quantity\": 1 },\r\n    { \"bookId\": \"69d487afab97e9ecfeed17a6\", \"quantity\": 2 }\r\n  ],\r\n  \"shippingAddress\": \"12 MG Road, Lucknow, UP 226001\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/orders/my",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders",
+                "my"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "getMyOrders",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"items\": [\r\n    { \"bookId\": \"69d487cdab97e9ecfeed17a8\", \"quantity\": 1 },\r\n    { \"bookId\": \"69d487afab97e9ecfeed17a6\", \"quantity\": 2 }\r\n  ],\r\n  \"shippingAddress\": \"12 MG Road, Lucknow, UP 226001\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/orders/my",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "orders",
+                    "my"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "16053"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"3eb5-Kx4xgZ3iHRkhE7k1+aI6QZ1Kpnw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 05:02:53 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"_id\": \"69d48f924d443b9da6663fe7\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 1716,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"12 Tech Park, Bengaluru, KA 560001\",\n        \"createdAt\": \"2026-04-07T05:01:06.787Z\",\n        \"updatedAt\": \"2026-04-07T05:01:06.787Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48f924d443b9da6663fe8\",\n                \"orderId\": \"69d48f924d443b9da6663fe7\",\n                \"bookId\": {\n                    \"_id\": \"69d487cdab97e9ecfeed17a8\",\n                    \"title\": \"To Kill a Mockingbird\",\n                    \"price\": 399,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780061935466-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 399,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48f924d443b9da6663fe9\",\n                \"orderId\": \"69d48f924d443b9da6663fe7\",\n                \"bookId\": {\n                    \"_id\": \"69d4878eab97e9ecfeed17a3\",\n                    \"title\": \"Atomic Habits\",\n                    \"price\": 399,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 399,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48f934d443b9da6663fea\",\n                \"orderId\": \"69d48f924d443b9da6663fe7\",\n                \"bookId\": {\n                    \"_id\": \"69d48749ab97e9ecfeed179f\",\n                    \"title\": \"The Pragmatic Programmer\",\n                    \"price\": 549,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 549,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48f934d443b9da6663feb\",\n                \"orderId\": \"69d48f924d443b9da6663fe7\",\n                \"bookId\": {\n                    \"_id\": \"69d48b8e4d443b9da6663fac\",\n                    \"title\": \"Deep Work\",\n                    \"price\": 369,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781455586691-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 369,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48f6c4d443b9da6663fe5\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 649,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"66 Cyber City, Gurugram, HR 122002\",\n        \"createdAt\": \"2026-04-07T05:00:28.560Z\",\n        \"updatedAt\": \"2026-04-07T05:00:28.560Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48f6c4d443b9da6663fe6\",\n                \"orderId\": \"69d48f6c4d443b9da6663fe5\",\n                \"bookId\": {\n                    \"_id\": \"69d48c5c4d443b9da6663fae\",\n                    \"title\": \"MongoDB: The Definitive Guide\",\n                    \"price\": 649,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781491954461-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 649,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48f534d443b9da6663fe1\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 907,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"44 Salt Lake City, Kolkata, WB 700064\",\n        \"createdAt\": \"2026-04-07T05:00:03.079Z\",\n        \"updatedAt\": \"2026-04-07T05:00:03.079Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48f534d443b9da6663fe2\",\n                \"orderId\": \"69d48f534d443b9da6663fe1\",\n                \"bookId\": {\n                    \"_id\": \"69d48b0f4d443b9da6663fa7\",\n                    \"title\": \"To Kill a Mockingbird\",\n                    \"price\": 229,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780061935466-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 229,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48f544d443b9da6663fe3\",\n                \"orderId\": \"69d48f534d443b9da6663fe1\",\n                \"bookId\": {\n                    \"_id\": \"69d48b474d443b9da6663fa9\",\n                    \"title\": \"Think and Grow Rich\",\n                    \"price\": 279,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781585424337-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 279,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48f544d443b9da6663fe4\",\n                \"orderId\": \"69d48f534d443b9da6663fe1\",\n                \"bookId\": {\n                    \"_id\": \"69d48c3c4d443b9da6663fad\",\n                    \"title\": \"The Psychology of Money\",\n                    \"price\": 399,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780857197689-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 399,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48f2e4d443b9da6663fde\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 2236,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"99 Connaught Place, New Delhi, DL 110001\",\n        \"createdAt\": \"2026-04-07T04:59:26.328Z\",\n        \"updatedAt\": \"2026-04-07T04:59:26.328Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48f2e4d443b9da6663fdf\",\n                \"orderId\": \"69d48f2e4d443b9da6663fde\",\n                \"bookId\": {\n                    \"_id\": \"69d48782ab97e9ecfeed17a2\",\n                    \"title\": \"Introduction to Algorithms\",\n                    \"price\": 899,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780262033848-L.jpg\"\n                },\n                \"quantity\": 2,\n                \"price\": 899,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48f2e4d443b9da6663fe0\",\n                \"orderId\": \"69d48f2e4d443b9da6663fde\",\n                \"bookId\": {\n                    \"_id\": \"69d48b744d443b9da6663fab\",\n                    \"title\": \"1984\",\n                    \"price\": 219,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg\"\n                },\n                \"quantity\": 2,\n                \"price\": 219,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48f144d443b9da6663fdb\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 1198,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"77 Gomti Nagar Extension, Lucknow, UP 226029\",\n        \"createdAt\": \"2026-04-07T04:59:00.229Z\",\n        \"updatedAt\": \"2026-04-07T04:59:00.229Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48f144d443b9da6663fdc\",\n                \"orderId\": \"69d48f144d443b9da6663fdb\",\n                \"bookId\": {\n                    \"_id\": \"69d487bcab97e9ecfeed17a7\",\n                    \"title\": \"Design Patterns\",\n                    \"price\": 699,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780201633610-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 699,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48f144d443b9da6663fdd\",\n                \"orderId\": \"69d48f144d443b9da6663fdb\",\n                \"bookId\": {\n                    \"_id\": \"69d48717ab97e9ecfeed179e\",\n                    \"title\": \"Clean Code\",\n                    \"price\": 499,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 499,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48ef04d443b9da6663fd8\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 1317,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"55 Andheri West, Mumbai, MH 400053\",\n        \"createdAt\": \"2026-04-07T04:58:24.374Z\",\n        \"updatedAt\": \"2026-04-07T04:58:24.374Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48ef04d443b9da6663fd9\",\n                \"orderId\": \"69d48ef04d443b9da6663fd8\",\n                \"bookId\": {\n                    \"_id\": \"69d48b5b4d443b9da6663faa\",\n                    \"title\": \"The Lean Startup\",\n                    \"price\": 449,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780307887894-L.jpg\"\n                },\n                \"quantity\": 2,\n                \"price\": 449,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48ef04d443b9da6663fda\",\n                \"orderId\": \"69d48ef04d443b9da6663fd8\",\n                \"bookId\": {\n                    \"_id\": \"69d48c8b4d443b9da6663fb0\",\n                    \"title\": \"Zero to One\",\n                    \"price\": 419,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780804139021-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 419,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48ed54d443b9da6663fd6\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 199,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"33 Park Street, Kolkata, WB 700016\",\n        \"createdAt\": \"2026-04-07T04:57:57.641Z\",\n        \"updatedAt\": \"2026-04-07T04:57:57.641Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48ed54d443b9da6663fd7\",\n                \"orderId\": \"69d48ed54d443b9da6663fd6\",\n                \"bookId\": {\n                    \"_id\": \"69d48798ab97e9ecfeed17a4\",\n                    \"title\": \"The Great Gatsby\",\n                    \"price\": 199,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 199,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48ebf4d443b9da6663fd2\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 1197,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"14 Indiranagar, Bengaluru, KA 560038\",\n        \"createdAt\": \"2026-04-07T04:57:35.547Z\",\n        \"updatedAt\": \"2026-04-07T04:57:35.547Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48ebf4d443b9da6663fd3\",\n                \"orderId\": \"69d48ebf4d443b9da6663fd2\",\n                \"bookId\": {\n                    \"_id\": \"69d487afab97e9ecfeed17a6\",\n                    \"title\": \"Rich Dad Poor Dad\",\n                    \"price\": 349,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781612680194-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 349,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48ec04d443b9da6663fd4\",\n                \"orderId\": \"69d48ebf4d443b9da6663fd2\",\n                \"bookId\": {\n                    \"_id\": \"69d487a5ab97e9ecfeed17a5\",\n                    \"title\": \"JavaScript: The Good Parts\",\n                    \"price\": 449,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780596517748-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 449,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48ec04d443b9da6663fd5\",\n                \"orderId\": \"69d48ebf4d443b9da6663fd2\",\n                \"bookId\": {\n                    \"_id\": \"69d4878eab97e9ecfeed17a3\",\n                    \"title\": \"Atomic Habits\",\n                    \"price\": 399,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 399,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48e894d443b9da6663fcf\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 748,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"88 Aliganj, Lucknow, UP 226024\",\n        \"createdAt\": \"2026-04-07T04:56:41.888Z\",\n        \"updatedAt\": \"2026-04-07T04:56:41.888Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48e8a4d443b9da6663fd0\",\n                \"orderId\": \"69d48e894d443b9da6663fcf\",\n                \"bookId\": {\n                    \"_id\": \"69d48c754d443b9da6663faf\",\n                    \"title\": \"The 7 Habits of Highly Effective People\",\n                    \"price\": 329,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781982137274-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 329,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48e8a4d443b9da6663fd1\",\n                \"orderId\": \"69d48e894d443b9da6663fcf\",\n                \"bookId\": {\n                    \"_id\": \"69d48c8b4d443b9da6663fb0\",\n                    \"title\": \"Zero to One\",\n                    \"price\": 419,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780804139021-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 419,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48e704d443b9da6663fcc\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 1097,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"22 Sector 18, Noida, UP 201301\",\n        \"createdAt\": \"2026-04-07T04:56:16.961Z\",\n        \"updatedAt\": \"2026-04-07T04:56:16.961Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48e714d443b9da6663fcd\",\n                \"orderId\": \"69d48e704d443b9da6663fcc\",\n                \"bookId\": {\n                    \"_id\": \"69d487cdab97e9ecfeed17a8\",\n                    \"title\": \"To Kill a Mockingbird\",\n                    \"price\": 399,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780061935466-L.jpg\"\n                },\n                \"quantity\": 2,\n                \"price\": 399,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48e714d443b9da6663fce\",\n                \"orderId\": \"69d48e704d443b9da6663fcc\",\n                \"bookId\": {\n                    \"_id\": \"69d4875aab97e9ecfeed17a0\",\n                    \"title\": \"Harry Potter and the Philosopher's Stone\",\n                    \"price\": 299,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780747532699-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 299,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48e584d443b9da6663fc9\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 1148,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"44 Rajouri Garden, New Delhi, DL 110027\",\n        \"createdAt\": \"2026-04-07T04:55:52.156Z\",\n        \"updatedAt\": \"2026-04-07T04:55:52.156Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48e584d443b9da6663fca\",\n                \"orderId\": \"69d48e584d443b9da6663fc9\",\n                \"bookId\": {\n                    \"_id\": \"69d48717ab97e9ecfeed179e\",\n                    \"title\": \"Clean Code\",\n                    \"price\": 499,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 499,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48e584d443b9da6663fcb\",\n                \"orderId\": \"69d48e584d443b9da6663fc9\",\n                \"bookId\": {\n                    \"_id\": \"69d48c5c4d443b9da6663fae\",\n                    \"title\": \"MongoDB: The Definitive Guide\",\n                    \"price\": 649,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781491954461-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 649,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48e3d4d443b9da6663fc7\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 399,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"11 Banjara Hills, Hyderabad, TS 500034\",\n        \"createdAt\": \"2026-04-07T04:55:25.679Z\",\n        \"updatedAt\": \"2026-04-07T04:55:25.679Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48e3e4d443b9da6663fc8\",\n                \"orderId\": \"69d48e3d4d443b9da6663fc7\",\n                \"bookId\": {\n                    \"_id\": \"69d48c3c4d443b9da6663fad\",\n                    \"title\": \"The Psychology of Money\",\n                    \"price\": 399,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780857197689-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 399,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48e294d443b9da6663fc4\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 1017,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"67 Koramangala, Bengaluru, KA 560034\",\n        \"createdAt\": \"2026-04-07T04:55:05.884Z\",\n        \"updatedAt\": \"2026-04-07T04:55:05.884Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48e2a4d443b9da6663fc5\",\n                \"orderId\": \"69d48e294d443b9da6663fc4\",\n                \"bookId\": {\n                    \"_id\": \"69d48b474d443b9da6663fa9\",\n                    \"title\": \"Think and Grow Rich\",\n                    \"price\": 279,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781585424337-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 279,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48e2b4d443b9da6663fc6\",\n                \"orderId\": \"69d48e294d443b9da6663fc4\",\n                \"bookId\": {\n                    \"_id\": \"69d48b8e4d443b9da6663fac\",\n                    \"title\": \"Deep Work\",\n                    \"price\": 369,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781455586691-L.jpg\"\n                },\n                \"quantity\": 2,\n                \"price\": 369,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48e0e4d443b9da6663fc1\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 898,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"89 Vaishali Nagar, Jaipur, RJ 302021\",\n        \"createdAt\": \"2026-04-07T04:54:38.003Z\",\n        \"updatedAt\": \"2026-04-07T04:54:38.003Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48e0e4d443b9da6663fc2\",\n                \"orderId\": \"69d48e0e4d443b9da6663fc1\",\n                \"bookId\": {\n                    \"_id\": \"69d4875aab97e9ecfeed17a0\",\n                    \"title\": \"Harry Potter and the Philosopher's Stone\",\n                    \"price\": 299,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780747532699-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 299,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48e0e4d443b9da6663fc3\",\n                \"orderId\": \"69d48e0e4d443b9da6663fc1\",\n                \"bookId\": {\n                    \"_id\": \"69d48b294d443b9da6663fa8\",\n                    \"title\": \"Node.js Design Patterns\",\n                    \"price\": 599,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781839214110-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 599,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48df14d443b9da6663fbf\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 1098,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"34 Gomti Nagar, Lucknow, UP 226010\",\n        \"createdAt\": \"2026-04-07T04:54:09.490Z\",\n        \"updatedAt\": \"2026-04-07T04:54:09.490Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48df14d443b9da6663fc0\",\n                \"orderId\": \"69d48df14d443b9da6663fbf\",\n                \"bookId\": {\n                    \"_id\": \"69d48749ab97e9ecfeed179f\",\n                    \"title\": \"The Pragmatic Programmer\",\n                    \"price\": 549,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg\"\n                },\n                \"quantity\": 2,\n                \"price\": 549,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48dbd4d443b9da6663fbb\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 1347,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"56 Rajpur Road, Dehradun, UK 248001\",\n        \"createdAt\": \"2026-04-07T04:53:17.030Z\",\n        \"updatedAt\": \"2026-04-07T04:53:17.030Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48dbd4d443b9da6663fbc\",\n                \"orderId\": \"69d48dbd4d443b9da6663fbb\",\n                \"bookId\": {\n                    \"_id\": \"69d48782ab97e9ecfeed17a2\",\n                    \"title\": \"Introduction to Algorithms\",\n                    \"price\": 899,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780262033848-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 899,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48dbe4d443b9da6663fbd\",\n                \"orderId\": \"69d48dbd4d443b9da6663fbb\",\n                \"bookId\": {\n                    \"_id\": \"69d48b0f4d443b9da6663fa7\",\n                    \"title\": \"To Kill a Mockingbird\",\n                    \"price\": 229,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780061935466-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 229,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48dbe4d443b9da6663fbe\",\n                \"orderId\": \"69d48dbd4d443b9da6663fbb\",\n                \"bookId\": {\n                    \"_id\": \"69d48b744d443b9da6663fab\",\n                    \"title\": \"1984\",\n                    \"price\": 219,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 219,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48d9b4d443b9da6663fb9\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 1347,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"23 Ashok Nagar, Allahabad, UP 211001\",\n        \"createdAt\": \"2026-04-07T04:52:43.405Z\",\n        \"updatedAt\": \"2026-04-07T04:52:43.405Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48d9b4d443b9da6663fba\",\n                \"orderId\": \"69d48d9b4d443b9da6663fb9\",\n                \"bookId\": {\n                    \"_id\": \"69d487a5ab97e9ecfeed17a5\",\n                    \"title\": \"JavaScript: The Good Parts\",\n                    \"price\": 449,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780596517748-L.jpg\"\n                },\n                \"quantity\": 3,\n                \"price\": 449,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48d7d4d443b9da6663fb6\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 898,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"78 Hazratganj, Lucknow, UP 226001\",\n        \"createdAt\": \"2026-04-07T04:52:13.576Z\",\n        \"updatedAt\": \"2026-04-07T04:52:13.576Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48d7d4d443b9da6663fb7\",\n                \"orderId\": \"69d48d7d4d443b9da6663fb6\",\n                \"bookId\": {\n                    \"_id\": \"69d487bcab97e9ecfeed17a7\",\n                    \"title\": \"Design Patterns\",\n                    \"price\": 699,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780201633610-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 699,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48d7e4d443b9da6663fb8\",\n                \"orderId\": \"69d48d7d4d443b9da6663fb6\",\n                \"bookId\": {\n                    \"_id\": \"69d48798ab97e9ecfeed17a4\",\n                    \"title\": \"The Great Gatsby\",\n                    \"price\": 199,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 199,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48d514d443b9da6663fb4\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 399,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"45 Civil Lines, Kanpur, UP 208001\",\n        \"createdAt\": \"2026-04-07T04:51:29.340Z\",\n        \"updatedAt\": \"2026-04-07T04:51:29.340Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48d514d443b9da6663fb5\",\n                \"orderId\": \"69d48d514d443b9da6663fb4\",\n                \"bookId\": {\n                    \"_id\": \"69d4878eab97e9ecfeed17a3\",\n                    \"title\": \"Atomic Habits\",\n                    \"price\": 399,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 399,\n                \"__v\": 0\n            }\n        ]\n    },\n    {\n        \"_id\": \"69d48d0e4d443b9da6663fb1\",\n        \"userId\": \"69d36aa1d9267479acee8391\",\n        \"totalPrice\": 1097,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"12 MG Road, Lucknow, UP 226001\",\n        \"createdAt\": \"2026-04-07T04:50:22.045Z\",\n        \"updatedAt\": \"2026-04-07T04:50:22.045Z\",\n        \"__v\": 0,\n        \"items\": [\n            {\n                \"_id\": \"69d48d0e4d443b9da6663fb2\",\n                \"orderId\": \"69d48d0e4d443b9da6663fb1\",\n                \"bookId\": {\n                    \"_id\": \"69d487cdab97e9ecfeed17a8\",\n                    \"title\": \"To Kill a Mockingbird\",\n                    \"price\": 399,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780061935466-L.jpg\"\n                },\n                \"quantity\": 1,\n                \"price\": 399,\n                \"__v\": 0\n            },\n            {\n                \"_id\": \"69d48d0f4d443b9da6663fb3\",\n                \"orderId\": \"69d48d0e4d443b9da6663fb1\",\n                \"bookId\": {\n                    \"_id\": \"69d487afab97e9ecfeed17a6\",\n                    \"title\": \"Rich Dad Poor Dad\",\n                    \"price\": 349,\n                    \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781612680194-L.jpg\"\n                },\n                \"quantity\": 2,\n                \"price\": 349,\n                \"__v\": 0\n            }\n        ]\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "getOrderById",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTUzNTg0NiwiZXhwIjoxNzc4MTI3ODQ2fQ.FaB71XOcowIM-3XZEjnJJpSPVHyi7csL7jTLlGLU6Aw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"items\": [\r\n    { \"bookId\": \"69d487cdab97e9ecfeed17a8\", \"quantity\": 1 },\r\n    { \"bookId\": \"69d487afab97e9ecfeed17a6\", \"quantity\": 2 }\r\n  ],\r\n  \"shippingAddress\": \"12 MG Road, Lucknow, UP 226001\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/orders/69d48f924d443b9da6663fe7",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders",
+                "69d48f924d443b9da6663fe7"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "getOrderById",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"items\": [\r\n    { \"bookId\": \"69d487cdab97e9ecfeed17a8\", \"quantity\": 1 },\r\n    { \"bookId\": \"69d487afab97e9ecfeed17a6\", \"quantity\": 2 }\r\n  ],\r\n  \"shippingAddress\": \"12 MG Road, Lucknow, UP 226001\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/orders/69d48f924d443b9da6663fe7",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "orders",
+                    "69d48f924d443b9da6663fe7"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1396"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"574-Eg+onShjHYcudUyXzUeJaynp9cI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 05:03:53 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"order\": {\n        \"_id\": \"69d48f924d443b9da6663fe7\",\n        \"userId\": {\n            \"_id\": \"69d36aa1d9267479acee8391\",\n            \"name\": \"Admin User\",\n            \"email\": \"admin@bookstore.com\"\n        },\n        \"totalPrice\": 1716,\n        \"orderStatus\": \"Created\",\n        \"paymentStatus\": \"Pending\",\n        \"shippingAddress\": \"12 Tech Park, Bengaluru, KA 560001\",\n        \"createdAt\": \"2026-04-07T05:01:06.787Z\",\n        \"updatedAt\": \"2026-04-07T05:01:06.787Z\",\n        \"__v\": 0\n    },\n    \"items\": [\n        {\n            \"_id\": \"69d48f924d443b9da6663fe8\",\n            \"orderId\": \"69d48f924d443b9da6663fe7\",\n            \"bookId\": {\n                \"_id\": \"69d487cdab97e9ecfeed17a8\",\n                \"title\": \"To Kill a Mockingbird\",\n                \"price\": 399,\n                \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780061935466-L.jpg\"\n            },\n            \"quantity\": 1,\n            \"price\": 399,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48f924d443b9da6663fe9\",\n            \"orderId\": \"69d48f924d443b9da6663fe7\",\n            \"bookId\": {\n                \"_id\": \"69d4878eab97e9ecfeed17a3\",\n                \"title\": \"Atomic Habits\",\n                \"price\": 399,\n                \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg\"\n            },\n            \"quantity\": 1,\n            \"price\": 399,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48f934d443b9da6663fea\",\n            \"orderId\": \"69d48f924d443b9da6663fe7\",\n            \"bookId\": {\n                \"_id\": \"69d48749ab97e9ecfeed179f\",\n                \"title\": \"The Pragmatic Programmer\",\n                \"price\": 549,\n                \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg\"\n            },\n            \"quantity\": 1,\n            \"price\": 549,\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48f934d443b9da6663feb\",\n            \"orderId\": \"69d48f924d443b9da6663fe7\",\n            \"bookId\": {\n                \"_id\": \"69d48b8e4d443b9da6663fac\",\n                \"title\": \"Deep Work\",\n                \"price\": 369,\n                \"imageUrl\": \"https://covers.openlibrary.org/b/isbn/9781455586691-L.jpg\"\n            },\n            \"quantity\": 1,\n            \"price\": 369,\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "getAllOrders",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTUzNTg0NiwiZXhwIjoxNzc4MTI3ODQ2fQ.FaB71XOcowIM-3XZEjnJJpSPVHyi7csL7jTLlGLU6Aw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"items\": [\r\n    { \"bookId\": \"69d487cdab97e9ecfeed17a8\", \"quantity\": 1 },\r\n    { \"bookId\": \"69d487afab97e9ecfeed17a6\", \"quantity\": 2 }\r\n  ],\r\n  \"shippingAddress\": \"12 MG Road, Lucknow, UP 226001\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "getAllOrders",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"items\": [\r\n    { \"bookId\": \"69d487cdab97e9ecfeed17a8\", \"quantity\": 1 },\r\n    { \"bookId\": \"69d487afab97e9ecfeed17a6\", \"quantity\": 2 }\r\n  ],\r\n  \"shippingAddress\": \"12 MG Road, Lucknow, UP 226001\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/orders",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "orders"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "3431"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"d67-TVWpSOfe4cgJWjgGFQo8o8l83hk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 07 Apr 2026 05:04:33 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"orders\": [\n        {\n            \"_id\": \"69d48f924d443b9da6663fe7\",\n            \"userId\": {\n                \"_id\": \"69d36aa1d9267479acee8391\",\n                \"name\": \"Admin User\",\n                \"email\": \"admin@bookstore.com\"\n            },\n            \"totalPrice\": 1716,\n            \"orderStatus\": \"Created\",\n            \"paymentStatus\": \"Pending\",\n            \"shippingAddress\": \"12 Tech Park, Bengaluru, KA 560001\",\n            \"createdAt\": \"2026-04-07T05:01:06.787Z\",\n            \"updatedAt\": \"2026-04-07T05:01:06.787Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48f6c4d443b9da6663fe5\",\n            \"userId\": {\n                \"_id\": \"69d36aa1d9267479acee8391\",\n                \"name\": \"Admin User\",\n                \"email\": \"admin@bookstore.com\"\n            },\n            \"totalPrice\": 649,\n            \"orderStatus\": \"Created\",\n            \"paymentStatus\": \"Pending\",\n            \"shippingAddress\": \"66 Cyber City, Gurugram, HR 122002\",\n            \"createdAt\": \"2026-04-07T05:00:28.560Z\",\n            \"updatedAt\": \"2026-04-07T05:00:28.560Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48f534d443b9da6663fe1\",\n            \"userId\": {\n                \"_id\": \"69d36aa1d9267479acee8391\",\n                \"name\": \"Admin User\",\n                \"email\": \"admin@bookstore.com\"\n            },\n            \"totalPrice\": 907,\n            \"orderStatus\": \"Created\",\n            \"paymentStatus\": \"Pending\",\n            \"shippingAddress\": \"44 Salt Lake City, Kolkata, WB 700064\",\n            \"createdAt\": \"2026-04-07T05:00:03.079Z\",\n            \"updatedAt\": \"2026-04-07T05:00:03.079Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48f2e4d443b9da6663fde\",\n            \"userId\": {\n                \"_id\": \"69d36aa1d9267479acee8391\",\n                \"name\": \"Admin User\",\n                \"email\": \"admin@bookstore.com\"\n            },\n            \"totalPrice\": 2236,\n            \"orderStatus\": \"Created\",\n            \"paymentStatus\": \"Pending\",\n            \"shippingAddress\": \"99 Connaught Place, New Delhi, DL 110001\",\n            \"createdAt\": \"2026-04-07T04:59:26.328Z\",\n            \"updatedAt\": \"2026-04-07T04:59:26.328Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48f144d443b9da6663fdb\",\n            \"userId\": {\n                \"_id\": \"69d36aa1d9267479acee8391\",\n                \"name\": \"Admin User\",\n                \"email\": \"admin@bookstore.com\"\n            },\n            \"totalPrice\": 1198,\n            \"orderStatus\": \"Created\",\n            \"paymentStatus\": \"Pending\",\n            \"shippingAddress\": \"77 Gomti Nagar Extension, Lucknow, UP 226029\",\n            \"createdAt\": \"2026-04-07T04:59:00.229Z\",\n            \"updatedAt\": \"2026-04-07T04:59:00.229Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48ef04d443b9da6663fd8\",\n            \"userId\": {\n                \"_id\": \"69d36aa1d9267479acee8391\",\n                \"name\": \"Admin User\",\n                \"email\": \"admin@bookstore.com\"\n            },\n            \"totalPrice\": 1317,\n            \"orderStatus\": \"Created\",\n            \"paymentStatus\": \"Pending\",\n            \"shippingAddress\": \"55 Andheri West, Mumbai, MH 400053\",\n            \"createdAt\": \"2026-04-07T04:58:24.374Z\",\n            \"updatedAt\": \"2026-04-07T04:58:24.374Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48ed54d443b9da6663fd6\",\n            \"userId\": {\n                \"_id\": \"69d36aa1d9267479acee8391\",\n                \"name\": \"Admin User\",\n                \"email\": \"admin@bookstore.com\"\n            },\n            \"totalPrice\": 199,\n            \"orderStatus\": \"Created\",\n            \"paymentStatus\": \"Pending\",\n            \"shippingAddress\": \"33 Park Street, Kolkata, WB 700016\",\n            \"createdAt\": \"2026-04-07T04:57:57.641Z\",\n            \"updatedAt\": \"2026-04-07T04:57:57.641Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48ebf4d443b9da6663fd2\",\n            \"userId\": {\n                \"_id\": \"69d36aa1d9267479acee8391\",\n                \"name\": \"Admin User\",\n                \"email\": \"admin@bookstore.com\"\n            },\n            \"totalPrice\": 1197,\n            \"orderStatus\": \"Created\",\n            \"paymentStatus\": \"Pending\",\n            \"shippingAddress\": \"14 Indiranagar, Bengaluru, KA 560038\",\n            \"createdAt\": \"2026-04-07T04:57:35.547Z\",\n            \"updatedAt\": \"2026-04-07T04:57:35.547Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48e894d443b9da6663fcf\",\n            \"userId\": {\n                \"_id\": \"69d36aa1d9267479acee8391\",\n                \"name\": \"Admin User\",\n                \"email\": \"admin@bookstore.com\"\n            },\n            \"totalPrice\": 748,\n            \"orderStatus\": \"Created\",\n            \"paymentStatus\": \"Pending\",\n            \"shippingAddress\": \"88 Aliganj, Lucknow, UP 226024\",\n            \"createdAt\": \"2026-04-07T04:56:41.888Z\",\n            \"updatedAt\": \"2026-04-07T04:56:41.888Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"69d48e704d443b9da6663fcc\",\n            \"userId\": {\n                \"_id\": \"69d36aa1d9267479acee8391\",\n                \"name\": \"Admin User\",\n                \"email\": \"admin@bookstore.com\"\n            },\n            \"totalPrice\": 1097,\n            \"orderStatus\": \"Created\",\n            \"paymentStatus\": \"Pending\",\n            \"shippingAddress\": \"22 Sector 18, Noida, UP 201301\",\n            \"createdAt\": \"2026-04-07T04:56:16.961Z\",\n            \"updatedAt\": \"2026-04-07T04:56:16.961Z\",\n            \"__v\": 0\n        }\n    ],\n    \"total\": 20,\n    \"page\": 1,\n    \"pages\": 2\n}"
+            }
+          ]
+        },
+        {
+          "name": "updateOrderStatus",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTUzNTg0NiwiZXhwIjoxNzc4MTI3ODQ2fQ.FaB71XOcowIM-3XZEjnJJpSPVHyi7csL7jTLlGLU6Aw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"items\": [\r\n    { \"bookId\": \"69d487cdab97e9ecfeed17a8\", \"quantity\": 2 },\r\n    { \"bookId\": \"69d4878eab97e9ecfeed17a3\", \"quantity\": 3 },\r\n    { \"bookId\": \"69d48749ab97e9ecfeed179f\", \"quantity\": 1 },\r\n    { \"bookId\": \"69d48b8e4d443b9da6663fac\", \"quantity\": 4}\r\n  ],\r\n  \"shippingAddress\": \"12 Tech Park, Bengaluru, KA 560001\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "email",
+      "item": [
+        {
+          "name": "getEmails",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTU0MDc1MiwiZXhwIjoxNzc4MTMyNzUyfQ.X2N3OdleVXJC8GKSQKi_mi9PN3wQdOWNLzxCR6HkNbA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/emails",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "emails"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "get",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/emails",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "emails"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "40"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"28-6bpX5+0HyhtsY7h6PDMv7WwT2Fg\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 08 Apr 2026 11:51:11 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"logs\": [],\n    \"total\": 0,\n    \"page\": 1,\n    \"pages\": 0\n}"
+            }
+          ]
+        },
+        {
+          "name": "getUser/userId",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "user/userId",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/emails/user/69d48d514d443b9da6663fb4",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "emails",
+                    "user",
+                    "69d48d514d443b9da6663fb4"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "2"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 08 Apr 2026 11:52:58 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "[]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "payment",
+      "item": [
+        {
+          "name": "createPayment",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTU0MDc1MiwiZXhwIjoxNzc4MTMyNzUyfQ.X2N3OdleVXJC8GKSQKi_mi9PN3wQdOWNLzxCR6HkNbA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"orderId\": \"69d48d0e4d443b9da6663fb1\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/payment/create-intent",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "payment",
+                "create-intent"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "createPayment",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"orderId\": \"69d48d0e4d443b9da6663fb1\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/payment/create-intent",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "payment",
+                    "create-intent"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "127"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"7f-Aduy6CQNbR1/0qnK+YeO9YTf7IQ\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 08 Apr 2026 06:16:17 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"clientSecret\": \"pi_3TJpPRCssoAqLPOw1bDW5uxu_secret_lkMQbkwFnM9q0CEg0Q4ORhZyW\",\n    \"paymentIntentId\": \"pi_3TJpPRCssoAqLPOw1bDW5uxu\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "get",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZDM2YWExZDkyNjc0NzlhY2VlODM5MSIsImlhdCI6MTc3NTU0MDc1MiwiZXhwIjoxNzc4MTMyNzUyfQ.X2N3OdleVXJC8GKSQKi_mi9PN3wQdOWNLzxCR6HkNbA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"orderId\": \"69d48d0e4d443b9da6663fb1\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/payment/order/69d48d0e4d443b9da6663fb1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "payment",
+                "order",
+                "69d48d0e4d443b9da6663fb1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "New Request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"orderId\": \"69d48d0e4d443b9da6663fb1\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:5000/api/payment/order/69d48d0e4d443b9da6663fb1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "payment",
+                    "order",
+                    "69d48d0e4d443b9da6663fb1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "222"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"de-x6zgN6DELEWQYKsFjWp6BZx3KeE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 08 Apr 2026 06:17:35 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"_id\": \"69d49f0e0de9e1a1dcc09a6c\",\n    \"orderId\": \"69d48d0e4d443b9da6663fb1\",\n    \"paymentIntentId\": \"pi_3TJSn4CssoAqLPOw1a6BpD1j\",\n    \"amount\": 1097,\n    \"currency\": \"inr\",\n    \"status\": \"Pending\",\n    \"transactionDate\": \"2026-04-07T06:07:10.503Z\",\n    \"__v\": 0\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
