@@ -49,7 +49,7 @@ const CartPage = () => {
         bgcolor: "#fff",
         borderBottom: "1px solid #e8e8e8",
         px: { xs: 2, md: 6 },
-        py: 2.5,
+        py: 1.5,
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",

@@ -90,7 +90,7 @@ const AdminDashboard = () => {
         bgcolor: "#fff",
         borderBottom: "1px solid #e8e8e8",
         px: { xs: 2, md: 6 },
-        py: 2.5,
+        py: 1.5,
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
@@ -112,9 +112,16 @@ const AdminDashboard = () => {
         />
       </Box>
 
-      <Box sx={{ px: { xs: 2, md: 6 }, py: 4 }}>
+      <Box
+        sx={{
+          px: { xs: 2, md: 6 },
+          py: 5,
+          maxWidth: 1200,
+          mx: "auto",
+        }}
+      >
         {/* ── Stats Grid ── */}
-        <Grid container spacing={2.5} mb={4}>
+        <Grid container spacing={4} mb={5}>
           {stats.map((stat) => (
             <Grid item xs={6} sm={6} md={3} key={stat.label}>
               <Paper elevation={0} sx={{
@@ -159,7 +166,7 @@ const AdminDashboard = () => {
         </Grid>
 
         {/* ── Quick Actions ── */}
-        <Grid container spacing={2.5} mb={4}>
+        <Grid container spacing={4} mb={5}>
           <Grid item xs={12} sm={6}>
             <Paper elevation={0} sx={{
               borderRadius: 3,

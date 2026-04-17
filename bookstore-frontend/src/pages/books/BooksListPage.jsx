@@ -32,7 +32,7 @@ const BooksListPage = () => {
         bgcolor: "#fff",
         borderBottom: "1px solid #e8e8e8",
         px: { xs: 2, md: 4 },
-        py: 1 ,
+        py: 1.5,
       }}>
         <Typography variant="h5" fontWeight="800" color="#1a1a2e">
           Browse Books
@@ -114,7 +114,7 @@ const BooksListPage = () => {
             </>
           )}
 
-
+        
         </Box>
 
       </Box>
