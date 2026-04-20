@@ -5,9 +5,7 @@ import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { loadStripe } from "@stripe/stripe-js"
-import {
-  Elements, CardElement, useStripe, useElements
-} from "@stripe/react-stripe-js"
+import {Elements, CardElement, useStripe, useElements} from "@stripe/react-stripe-js"
 import { createOrder } from "../../features/orders/orderSlice"
 import { createPaymentIntent } from "../../features/payment/paymentSlice"
 import { clearCart, selectCartTotal } from "../../features/cart/cartSlice"
@@ -59,21 +57,21 @@ const PaymentForm = ({ shippingAddress, items }) => {
 
   useEffect(() => {
     if (items.length > 0 && shippingAddress && !orderCreated.current) {
-      orderCreated.current = true   // ← mark BEFORE dispatch
+      orderCreated.current = true   
       const orderItems = items.map((item) => ({
         bookId: item._id,
         quantity: item.quantity,
       }))
       dispatch(createOrder({ items: orderItems, shippingAddress }))
     }
-  }, [])   // ← empty array — runs ONCE on mount only
+  }, [])  
 
   useEffect(() => {
     if (createdOrder?._id) {
       dispatch(createPaymentIntent(createdOrder._id))
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [createdOrder?._id])   // ← only when _id changes
+  }, [createdOrder?._id]) 
 
   const handlePay = async (e) => {
     e.preventDefault()
@@ -191,7 +189,7 @@ const CheckoutPage = () => {
   })
 
   useEffect(() => {
-    if (items.length === 0) navigate("/cart")  // ← fixed
+    if (items.length === 0) navigate("/cart")
   }, [items, navigate])
 
   const onShippingSubmit = (data) => {
@@ -222,7 +220,7 @@ const CheckoutPage = () => {
         </Box>
         <Button
           startIcon={<ArrowBack />}
-          onClick={() => navigate("/cart")}  // ← fixed
+          onClick={() => navigate("/cart")}
           variant="outlined"
           size="medium"
           sx={{ borderRadius: 2 }}

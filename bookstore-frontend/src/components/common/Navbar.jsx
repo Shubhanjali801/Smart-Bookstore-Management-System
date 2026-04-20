@@ -73,7 +73,7 @@ const Navbar = () => {
           {token ? (
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
 
-              {/* ← Clickable profile chip */}
+              {/*  Clickable profile chip */}
               <Chip
                 icon={<Person sx={{ color: "#9FE1CB !important", fontSize: "16px" }} />}
                 label={`Hi, ${user?.name?.split(" ")[0]}`}

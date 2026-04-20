@@ -93,7 +93,7 @@ const BookDetailPage = () => {
             flexDirection: { xs: "column", md: "row" },
             gap: { xs: 3, md: 6 },
             alignItems: "flex-start",
-            justifyContent: "center", // centers layout nicely
+            justifyContent: "center", 
           }}
         >
 
@@ -185,7 +185,7 @@ const BookDetailPage = () => {
             sx={{
               flex: 1,
               minWidth: 0,
-              maxWidth: 700,   // limits right panel width
+              maxWidth: 700, 
             }}
           >
             <Paper elevation={0} sx={{

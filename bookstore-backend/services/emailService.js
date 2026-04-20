@@ -60,7 +60,7 @@ const sendOrderStatusUpdate = async (userEmail, orderStatus, orderId, userId) =>
   }
 
   const info = statusMessages[orderStatus]
-  if (!info) return  // ← no email for "Created" status
+  if (!info) return 
 
   try {
     await transporter.sendMail({
@@ -106,5 +106,4 @@ const sendOrderStatusUpdate = async (userEmail, orderStatus, orderId, userId) =>
   }
 }
 
-// ← add to exports at bottom
 module.exports = { sendOrderConfirmation, sendOrderStatusUpdate }

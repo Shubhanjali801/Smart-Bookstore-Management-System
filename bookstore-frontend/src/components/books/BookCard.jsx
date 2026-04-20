@@ -43,9 +43,9 @@ const BookCard = ({ book }) => {
           alt={book.title}
           sx={{
             width: "100%",
-            height: 280,              // ← taller image
-            objectFit: "cover",       // ← fills the box
-            objectPosition: "center top", // ← shows top of cover
+            height: 280,            
+            objectFit: "cover",    
+            objectPosition: "center top", 
             transition: "transform 0.3s",
             "&:hover": {
               transform: "scale(1.04)",
