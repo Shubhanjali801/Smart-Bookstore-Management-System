@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
@@ -194,7 +193,7 @@ const CheckoutPage = () => {
   })
 
   useEffect(() => {
-    if (items.length === 0) navigate("/cart")
+    if (items.length === 0) navigate("/order-success")// navigate("/cart")
   }, [items, navigate])
 
   const onShippingSubmit = (data) => {
@@ -225,7 +224,7 @@ const CheckoutPage = () => {
         </Box>
         <Button
           startIcon={<ArrowBack />}
-          onClick={() => navigate("/cart")}
+          onClick={() => navigate("/order-success")} // navigate("/cart")
           variant="outlined"
           size="medium"
           sx={{ borderRadius: 2 }}

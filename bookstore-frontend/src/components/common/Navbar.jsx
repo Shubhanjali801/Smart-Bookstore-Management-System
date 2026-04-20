@@ -8,10 +8,9 @@ import {
 } from "@mui/material"
 import {
   ShoppingCart, MenuBook, Logout,
-  Dashboard, LibraryBooks
+  Dashboard, LibraryBooks, Person
 } from "@mui/icons-material"
 
-// ── Component ─────────────────────────────────────────────────
 const Navbar = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -28,9 +27,10 @@ const Navbar = () => {
       <Toolbar sx={{ justifyContent: "space-between" }}>
 
         {/* Brand */}
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1,
-          cursor: "pointer" }}
-          onClick={() => navigate("/books")}>
+        <Box
+          sx={{ display: "flex", alignItems: "center", gap: 1, cursor: "pointer" }}
+          onClick={() => navigate("/books")}
+        >
           <MenuBook />
           <Typography variant="h6" fontWeight="bold">
             Bookstore
@@ -47,50 +47,65 @@ const Navbar = () => {
 
           {token && (
             <>
-              <IconButton color="inherit"
-                onClick={() => navigate("/cart")}>
+              <IconButton color="inherit" onClick={() => navigate("/cart")}>
                 <Badge badgeContent={cartCount} color="error">
                   <ShoppingCart />
                 </Badge>
               </IconButton>
 
-              <Button color="inherit"
-                onClick={() => navigate("/orders")}>
+              <Button color="inherit" onClick={() => navigate("/orders")}>
                 My Orders
               </Button>
             </>
           )}
 
           {user?.role === "admin" && (
-            <Button color="inherit" startIcon={<Dashboard />}
+            <Button
+              color="inherit"
+              startIcon={<Dashboard />}
               onClick={() => navigate("/admin")}
-              sx={{ color: "#7F77DD", fontWeight: "bold" }}>
+              sx={{ color: "#7F77DD", fontWeight: "bold" }}
+            >
               Admin
             </Button>
           )}
 
           {token ? (
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+
+              {/* ← Clickable profile chip */}
               <Chip
+                icon={<Person sx={{ color: "#9FE1CB !important", fontSize: "16px" }} />}
                 label={`Hi, ${user?.name?.split(" ")[0]}`}
                 size="medium"
-                sx={{ color: "#9FE1CB", border: "1px solid #9FE1CB",
-                  background: "transparent" }}
+                onClick={() => navigate("/profile")}
+                sx={{
+                  color: "#9FE1CB",
+                  border: "1px solid #9FE1CB",
+                  background: "transparent",
+                  cursor: "pointer",
+                  "&:hover": {
+                    background: "rgba(159, 225, 203, 0.1)",
+                  },
+                }}
               />
-              <IconButton color="inherit" onClick={handleLogout}
-                title="Logout">
+
+              <IconButton color="inherit" onClick={handleLogout} title="Logout">
                 <Logout fontSize="small" />
               </IconButton>
             </Box>
           ) : (
             <Box sx={{ display: "flex", gap: 1 }}>
-              <Button color="inherit"
-                component={RouterLink} to="/login">
+              <Button color="inherit" component={RouterLink} to="/login">
                 Login
               </Button>
-              <Button variant="outlined" color="inherit"
-                component={RouterLink} to="/register"
-                sx={{ borderRadius: 2 }}>
+              <Button
+                variant="outlined"
+                color="inherit"
+                component={RouterLink}
+                to="/register"
+                sx={{ borderRadius: 2 }}
+              >
                 Register
               </Button>
             </Box>

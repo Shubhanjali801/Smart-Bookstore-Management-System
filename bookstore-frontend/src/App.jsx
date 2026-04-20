@@ -1,21 +1,22 @@
 import { Routes, Route, Navigate } from "react-router-dom"
-import Navbar           from "./components/common/Navbar"
-import Footer           from "./components/common/Footer"
-import ProtectedRoute   from "./components/common/ProtectedRoute"
-import AdminRoute       from "./components/common/AdminRoute"
+import Navbar from "./components/common/Navbar"
+import Footer from "./components/common/Footer"
+import ProtectedRoute from "./components/common/ProtectedRoute"
+import AdminRoute from "./components/common/AdminRoute"
 
-import LoginPage        from "./pages/auth/LoginPage"
-import RegisterPage     from "./pages/auth/RegisterPage"
-import BooksListPage    from "./pages/books/BooksListPage"
-import BookDetailPage   from "./pages/books/BookDetailPage"
-import CartPage         from "./pages/cart/CartPage"
-import CheckoutPage     from "./pages/payment/CheckoutPage"
-import MyOrdersPage     from "./pages/orders/MyOrdersPage"
-import OrderDetailPage  from "./pages/orders/OrderDetailPage"
+import LoginPage from "./pages/auth/LoginPage"
+import RegisterPage from "./pages/auth/RegisterPage"
+import ProfilePage from "./pages/auth/ProfilePage"
+import BooksListPage from "./pages/books/BooksListPage"
+import BookDetailPage from "./pages/books/BookDetailPage"
+import CartPage from "./pages/cart/CartPage"
+import CheckoutPage from "./pages/payment/CheckoutPage"
+import MyOrdersPage from "./pages/orders/MyOrdersPage"
+import OrderDetailPage from "./pages/orders/OrderDetailPage"
 import OrderSuccessPage from "./pages/orders/OrderSuccessPage"
-import AdminDashboard   from "./pages/admin/AdminDashboard"
-import AdminBooksPage   from "./pages/admin/AdminBooksPage"
-import AdminOrdersPage  from "./pages/admin/AdminOrdersPage"
+import AdminDashboard from "./pages/admin/AdminDashboard"
+import AdminBooksPage from "./pages/admin/AdminBooksPage"
+import AdminOrdersPage from "./pages/admin/AdminOrdersPage"
 
 function App() {
   return (
@@ -29,12 +30,16 @@ function App() {
       <Navbar />
       <main style={{ flex: 1, width: "100%" }}>
         <Routes>
-          <Route path="/"          element={<Navigate to="/books" />} />
-          <Route path="/login"     element={<LoginPage />} />
-          <Route path="/register"  element={<RegisterPage />} />
-          <Route path="/books"     element={<BooksListPage />} />
+          <Route path="/" element={<Navigate to="/books" />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+
+          <Route path="/books" element={<BooksListPage />} />
           <Route path="/books/:id" element={<BookDetailPage />} />
 
+          <Route path="/profile" element={
+            <ProtectedRoute><ProfilePage /></ProtectedRoute>} />
+            
           <Route path="/cart" element={
             <ProtectedRoute><CartPage /></ProtectedRoute>} />
 
@@ -55,7 +60,7 @@ function App() {
 
           <Route path="/admin/books" element={
             <AdminRoute><AdminBooksPage /></AdminRoute>} />
-            
+
           <Route path="/admin/orders" element={
             <AdminRoute><AdminOrdersPage /></AdminRoute>} />
         </Routes>

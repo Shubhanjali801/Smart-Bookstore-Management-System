@@ -106,10 +106,10 @@ npm install
 Create a `.env` file in `bookstore-backend/`:
 
 ```env
-MONGO_URI=mongodb+srv://your_username:your_password@cluster.mongodb.net/bookstore
+MONGO_URI=xxxxxxxxxxxxx
 JWT_SECRET=your_jwt_secret_key
-STRIPE_SECRET_KEY=sk_test_51XXXXXXXXXX
-STRIPE_WEBHOOK_SECRET=whsec_XXXXXXXXXX
+STRIPE_SECRET_KEY=cccc_51XXXXXXXXXX
+STRIPE_WEBHOOK_SECRET=xxxxxxx
 EMAIL_USER=youremail@gmail.com
 EMAIL_PASS=xxxx xxxx xxxx xxxx
 NODE_ENV=development
