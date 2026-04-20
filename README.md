@@ -4,6 +4,50 @@ A full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerce bookst
 
 ---
 
+## 📸 Screenshots
+
+### Register
+![Register](frontend/public/images/registerPage.png)
+
+### Login 
+![Login](frontend/public/images/loginPage.png)
+
+### Admin/Customer 
+![Users](Images/MyProfilePage.png)
+
+### Admin Dashboard
+![Admin Dashboard](Images/admin_dashboard.png)
+
+### Browse Books
+![Browse Books](/Images/admin_books_pages.png)
+
+### Books Page
+![Books Page](/Images/booksPage.png)
+
+### Admin Order Page
+![Admin Order Page](/Images/admin_ordersPage.png)
+
+### orderIdDetailsPage
+![orderIdDetailsPage](/Images/orderIdDetailsPage.png)
+
+### order-successPage
+![order-successPage](/Images/order-successPage.png)
+
+### cartPage
+![cartPage ](/Images/cartPage.png)
+
+### checkoutPaymentPage
+![checkoutPaymentPage ](/Images/checkoutPaymentPage.png)
+
+### checkoutShippingPage
+![checkoutShippingPage ](/Images/checkoutShippingPage.png)
+
+### orderIdDetailsPage
+![orderIdDetailsPage ](/Images/orderIdDetailsPage.png)
+
+---
+
+
 ## 🌐 Live Demo
 
 | Service | URL |
@@ -13,6 +57,8 @@ A full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerce bookst
 
 <!-- > ⚠️ Backend is hosted on Render free tier — first request may take 30–60 seconds to wake up. -->
 
+---
+> [Video Link](https://drive.google.com/file/d/1YZVZvPKz94te845og_8vL668pYHWMB_O/view?usp=drive_link)
 ---
 
 ## ✨ Features
@@ -250,18 +296,6 @@ git add .
 git commit -m "your message"
 git push   # → Vercel auto-redeploys
 ```
-
----
-
-## 📸 Screenshots
-
-| Browse Books | Admin Dashboard |
-|---|---|
-| Genre filter + search + grid | Stats + orders + revenue |
-
-| Checkout | Admin Books |
-|---|---|
-| 2-step: address + Stripe | Full CRUD + stock chips |
 
 ---
 
