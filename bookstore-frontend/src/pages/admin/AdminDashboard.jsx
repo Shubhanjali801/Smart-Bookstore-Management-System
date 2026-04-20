@@ -28,10 +28,35 @@ const AdminDashboard = () => {
     dispatch(fetchBooks({ limit: 100 }))
   }, [dispatch])
 
-  const paidOrders = orders.filter((o) => o.paymentStatus === "Paid")
-  const totalRevenue = paidOrders.reduce((sum, o) => sum + o.totalPrice, 0)
+  // ── Revenue — counts Paid OR active order statuses ──────────
+  const revenueOrders = orders.filter((o) =>
+    o.paymentStatus === "Paid" ||
+    o.orderStatus === "Confirmed" ||
+    o.orderStatus === "Processing" ||
+    o.orderStatus === "Shipped" ||
+    o.orderStatus === "Delivered"
+  )
+  const totalRevenue = revenueOrders.reduce(
+    (sum, o) => sum + o.totalPrice, 0
+  )
+
   const lowStockBooks = books.filter((b) => b.stock < 5)
-  const pendingOrders = orders.filter((o) => o.orderStatus === "Created").length
+  const pendingOrders = orders.filter(
+    (o) => o.orderStatus === "Created" || o.orderStatus === "Confirmed"
+  ).length
+
+  // ── Status chip color ────────────────────────────────────────
+  const getStatusColor = (status) => {
+    const map = {
+      Created:    "default",
+      Confirmed:  "primary",
+      Processing: "warning",
+      Shipped:    "info",
+      Delivered:  "success",
+      Cancelled:  "error",
+    }
+    return map[status] || "default"
+  }
 
   const stats = [
     {
@@ -58,7 +83,7 @@ const AdminDashboard = () => {
       icon: <AttachMoney />,
       color: "#27500A",
       bg: "#EAF3DE",
-      sub: `${paidOrders.length} paid orders`,
+      sub: `${revenueOrders.length} active orders`,
       subColor: "#1D9E75",
     },
     {
@@ -67,8 +92,7 @@ const AdminDashboard = () => {
       icon: <Warning />,
       color: "#A32D2D",
       bg: "#FFEBEE",
-      sub: lowStockBooks.length > 0
-        ? "Needs attention" : "All good",
+      sub: lowStockBooks.length > 0 ? "Needs attention" : "All good",
       subColor: lowStockBooks.length > 0 ? "#E24B4A" : "#1D9E75",
     },
   ]
@@ -112,25 +136,20 @@ const AdminDashboard = () => {
         />
       </Box>
 
-      <Box
-        sx={{
-          px: { xs: 2, md: 6 },
-          py: 5,
-          maxWidth: 1200,
-          mx: "auto",
-        }}
-      >
+      <Box sx={{ px: { xs: 2, md: 6 }, py: 5, maxWidth: 1200, mx: "auto" }}>
+
         {/* ── Stats Grid ── */}
         <Grid container spacing={4} mb={5}>
           {stats.map((stat) => (
             <Grid item xs={6} sm={6} md={3} key={stat.label}>
               <Paper elevation={0} sx={{
-                borderRadius: 3,
-                p: 3,
+                borderRadius: 3, p: 3,
                 border: "1px solid #e8e8e8",
                 bgcolor: "#fff",
                 transition: "all 0.2s",
-                "&:hover": { boxShadow: "0 4px 20px rgba(0,0,0,0.08)" },
+                "&:hover": {
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.08)"
+                },
               }}>
                 <Box sx={{
                   display: "flex",
@@ -149,8 +168,7 @@ const AdminDashboard = () => {
                     </Typography>
                   </Box>
                   <Avatar sx={{
-                    bgcolor: stat.bg,
-                    color: stat.color,
+                    bgcolor: stat.bg, color: stat.color,
                     width: 48, height: 48,
                   }}>
                     {stat.icon}
@@ -169,18 +187,15 @@ const AdminDashboard = () => {
         <Grid container spacing={4} mb={5}>
           <Grid item xs={12} sm={6}>
             <Paper elevation={0} sx={{
-              borderRadius: 3,
-              p: 3,
+              borderRadius: 3, p: 3,
               border: "1px solid #e8e8e8",
-              bgcolor: "#fff",
-              cursor: "pointer",
+              bgcolor: "#fff", cursor: "pointer",
               transition: "all 0.2s",
               "&:hover": {
                 boxShadow: "0 4px 20px rgba(83,74,183,0.15)",
                 borderColor: "#534AB7",
               },
-            }}
-              onClick={() => navigate("/admin/books")}>
+            }} onClick={() => navigate("/admin/books")}>
               <Box sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -194,8 +209,7 @@ const AdminDashboard = () => {
                     <Inventory />
                   </Avatar>
                   <Box>
-                    <Typography variant="h6" fontWeight="700"
-                      color="#1a1a2e">
+                    <Typography variant="h6" fontWeight="700" color="#1a1a2e">
                       Manage Books
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -210,18 +224,15 @@ const AdminDashboard = () => {
 
           <Grid item xs={12} sm={6}>
             <Paper elevation={0} sx={{
-              borderRadius: 3,
-              p: 3,
+              borderRadius: 3, p: 3,
               border: "1px solid #e8e8e8",
-              bgcolor: "#fff",
-              cursor: "pointer",
+              bgcolor: "#fff", cursor: "pointer",
               transition: "all 0.2s",
               "&:hover": {
                 boxShadow: "0 4px 20px rgba(29,158,117,0.15)",
                 borderColor: "#1D9E75",
               },
-            }}
-              onClick={() => navigate("/admin/orders")}>
+            }} onClick={() => navigate("/admin/orders")}>
               <Box sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -235,8 +246,7 @@ const AdminDashboard = () => {
                     <ManageSearch />
                   </Avatar>
                   <Box>
-                    <Typography variant="h6" fontWeight="700"
-                      color="#1a1a2e">
+                    <Typography variant="h6" fontWeight="700" color="#1a1a2e">
                       Manage Orders
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
@@ -256,8 +266,6 @@ const AdminDashboard = () => {
           border: "1px solid #e8e8e8",
           overflow: "hidden",
         }}>
-
-          {/* Table header */}
           <Box sx={{
             px: 3, py: 2.5,
             display: "flex",
@@ -286,8 +294,8 @@ const AdminDashboard = () => {
           <Table>
             <TableHead>
               <TableRow sx={{ bgcolor: "#fafafa" }}>
-                {["Order ID", "Total", "Payment",
-                  "Status", "Date"].map((h) => (
+                {["Order ID", "Total", "Payment", "Status", "Date"]
+                  .map((h) => (
                     <TableCell key={h} sx={{
                       fontWeight: "700",
                       color: "text.secondary",
@@ -311,46 +319,64 @@ const AdminDashboard = () => {
                       #{order._id.slice(-8).toUpperCase()}
                     </Typography>
                   </TableCell>
+
                   <TableCell>
                     <Typography variant="body2" fontWeight="700"
                       color="success.main">
                       ₹{order.totalPrice.toLocaleString("en-IN")}
                     </Typography>
                   </TableCell>
+
+                  {/* ── Payment chip — color coded ── */}
                   <TableCell>
                     <Chip
                       label={order.paymentStatus}
-                      color={order.paymentStatus === "Paid"
-                        ? "success" : "warning"}
-                      size="medium"
+                      color={
+                        order.paymentStatus === "Paid" ? "success" :
+                        order.paymentStatus === "Failed" ? "error" :
+                        "warning"
+                      }
+                      size="small"
                       sx={{ fontWeight: 600, fontSize: "11px" }}
                     />
                   </TableCell>
+
+                  {/* ── Order status chip — color coded ── */}
                   <TableCell>
                     <Chip
                       label={order.orderStatus}
-                      color="primary"
-                      size="medium"
+                      color={getStatusColor(order.orderStatus)}
+                      size="small"
                       variant="outlined"
                       sx={{ fontWeight: 600, fontSize: "11px" }}
                     />
                   </TableCell>
+
                   <TableCell>
                     <Typography variant="body2" color="text.secondary">
-                      {new Date(order.createdAt)
-                        .toLocaleDateString("en-IN", {
-                          day: "numeric",
-                          month: "short",
-                          year: "numeric",
-                        })}
+                      {new Date(order.createdAt).toLocaleDateString("en-IN", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })}
                     </Typography>
                   </TableCell>
                 </TableRow>
               ))}
+
+              {/* Empty state */}
+              {orders.length === 0 && (
+                <TableRow>
+                  <TableCell colSpan={5}
+                    sx={{ textAlign: "center", py: 4, color: "text.secondary" }}>
+                    No orders yet.
+                  </TableCell>
+                </TableRow>
+              )}
             </TableBody>
           </Table>
 
-          {/* Low stock warning section */}
+          {/* ── Low Stock Warning ── */}
           {lowStockBooks.length > 0 && (
             <>
               <Divider />
@@ -364,7 +390,7 @@ const AdminDashboard = () => {
                     <Chip
                       key={book._id}
                       label={`${book.title} (${book.stock} left)`}
-                      size="medium"
+                      size="small"
                       color="error"
                       variant="outlined"
                       sx={{ fontSize: "11px" }}

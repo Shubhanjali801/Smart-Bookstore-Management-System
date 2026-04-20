@@ -3,6 +3,7 @@ const Order = require('../models/Order');
 const OrderItem = require('../models/OrderItem');
 const Book = require('../models/Book');
 const { sendOrderConfirmation } = require('../services/emailService');
+const { sendOrderStatusUpdate } = require("../services/emailService")
 
 // @desc    Create new order
 // @route   POST /api/orders
@@ -148,22 +149,49 @@ exports.getAllOrders = async (req, res) => {
 // @access  Private/Admin
 exports.updateOrderStatus = async (req, res) => {
   try {
-    const { orderStatus } = req.body;
+    const { orderStatus, paymentStatus } = req.body;
 
-    const validStatuses = ['Created', 'Confirmed', 'Processing', 'Shipped', 'Delivered', 'Cancelled'];
-    if (!validStatuses.includes(orderStatus)) {
-      return res.status(400).json({ message: `Invalid status. Must be one of: ${validStatuses.join(', ')}` });
+    // ── Validate orderStatus ──────────────────────────────
+    const validOrderStatuses = ['Created', 'Confirmed', 'Processing', 'Shipped', 'Delivered', 'Cancelled'];
+    if (orderStatus && !validOrderStatuses.includes(orderStatus)) {
+      return res.status(400).json({ 
+        message: `Invalid status. Must be one of: ${validOrderStatuses.join(', ')}` 
+      });
     }
 
-    const order = await Order.findById(req.params.id);
+    // ── Validate paymentStatus ────────────────────────────
+    const validPaymentStatuses = ['Pending', 'Paid', 'Failed'];
+    if (paymentStatus && !validPaymentStatuses.includes(paymentStatus)) {
+      return res.status(400).json({ 
+        message: `Invalid payment status. Must be one of: ${validPaymentStatuses.join(', ')}` 
+      });
+    }
+
+    // ── Find order ────────────────────────────────────────
+    const order = await Order.findById(req.params.id)
+      .populate("userId", "name email");
+
     if (!order) {
       return res.status(404).json({ message: 'Order not found' });
     }
 
-    order.orderStatus = orderStatus;
+    // ── Update fields if provided ─────────────────────────
+    if (orderStatus) order.orderStatus = orderStatus;
+    if (paymentStatus) order.paymentStatus = paymentStatus;   // ← new
+
     await order.save();
 
-    res.status(200).json({ message: 'Order status updated', order });
+    // ── Send status update email ──────────────────────────
+    if (orderStatus && order.userId?.email) {
+      await sendOrderStatusUpdate(
+        order.userId.email,
+        orderStatus,
+        order._id,
+        order.userId._id
+      )
+    }
+
+    res.status(200).json({ message: 'Order updated successfully', order });
   } catch (error) {
     console.error('Error in updateOrderStatus controller:', error.message);
     res.status(500).json({ message: 'Server error updating order status' });
