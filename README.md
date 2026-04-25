@@ -7,10 +7,10 @@ A full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerce bookst
 ## 📸 Screenshots
 
 ### Register
-![Register](frontend/public/images/registerPage.png)
+![Register](/Images/registerPage.png)
 
 ### Login 
-![Login](frontend/public/images/loginPage.png)
+![Login](/Images/loginPage.png)
 
 ### Admin/Customer 
 ![Users](Images/MyProfilePage.png)
