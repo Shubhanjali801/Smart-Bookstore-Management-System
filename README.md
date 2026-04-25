@@ -39,7 +39,7 @@ A full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerce bookst
 ### Checkout Payment Page
 ![checkoutPaymentPage ](/Images/checkoutPaymentPage.png)
 
-### heckoutShippingPage
+### Checkout Shipping Page
 ![checkoutShippingPage ](/Images/checkoutShippingPage.png)
 
 ### OrderId Details Page
