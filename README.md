@@ -27,22 +27,22 @@ A full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerce bookst
 ### Admin Order Page
 ![Admin Order Page](/Images/admin_ordersPage.png)
 
-### orderIdDetailsPage
+### OrderId Details Page
 ![orderIdDetailsPage](/Images/orderIdDetailsPage.png)
 
-### order-successPage
+### Order Success Page
 ![order-successPage](/Images/order-successPage.png)
 
-### cartPage
+### Cart Page
 ![cartPage ](/Images/cartPage.png)
 
-### checkoutPaymentPage
+### Checkout Payment Page
 ![checkoutPaymentPage ](/Images/checkoutPaymentPage.png)
 
-### checkoutShippingPage
+### heckoutShippingPage
 ![checkoutShippingPage ](/Images/checkoutShippingPage.png)
 
-### orderIdDetailsPage
+### OrderId Details Page
 ![orderIdDetailsPage ](/Images/orderIdDetailsPage.png)
 
 ---
