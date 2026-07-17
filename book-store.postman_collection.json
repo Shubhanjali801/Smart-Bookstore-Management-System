@@ -4,7 +4,137 @@
     "name": "book-store",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "43522881"
-  },
+  }, "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "http://localhost:5000/api/"
+    },
+    {
+      "key": "TOKEN",
+      "value": ""
+    },
+    {
+      "key": "USER_ID",
+      "value": ""
+    },
+    {
+      "key": "NEW_USER_ID",
+      "value": ""
+    },
+    {
+      "key": "ACCOUNT_ID",
+      "value": ""
+    },
+    {
+      "key": "AP_ID",
+      "value": ""
+    },
+    {
+      "key": "AR_ID",
+      "value": ""
+    },
+    {
+      "key": "PAYMENT_ID",
+      "value": ""
+    },
+    {
+      "key": "EMPLOYEE_ID",
+      "value": ""
+    },
+    {
+      "key": "DEPT_ID",
+      "value": ""
+    },
+    {
+      "key": "LEAVE_TYPE_ID",
+      "value": ""
+    },
+    {
+      "key": "LEAVE_ID",
+      "value": ""
+    },
+    {
+      "key": "ATTENDANCE_ID",
+      "value": ""
+    },
+    {
+      "key": "PAYROLL_ID",
+      "value": ""
+    },
+    {
+      "key": "INVENTORY_ITEM_ID",
+      "value": ""
+    },
+    {
+      "key": "VENDOR_ID",
+      "value": ""
+    },
+    {
+      "key": "ITEM_ID",
+      "value": ""
+    },
+    {
+      "key": "PO_ID",
+      "value": ""
+    },
+    {
+      "key": "PO_LINE_ID",
+      "value": ""
+    },
+    {
+      "key": "PROJECT_ID",
+      "value": ""
+    },
+    {
+      "key": "MILESTONE_ID",
+      "value": ""
+    },
+    {
+      "key": "TASK_ID",
+      "value": ""
+    },
+    {
+      "key": "RESOURCE_ID",
+      "value": ""
+    },
+    {
+      "key": "NOTIFICATION_ID",
+      "value": ""
+    },
+    {
+      "key": "WEBHOOK_ID",
+      "value": ""
+    },
+    {
+      "key": "PERMISSION_ID",
+      "value": ""
+    },
+    {
+      "key": "ROLE_ID",
+      "value": ""
+    },
+    {
+      "key": "DASHBOARD_ID",
+      "value": ""
+    },
+    {
+      "key": "WIDGET_ID",
+      "value": ""
+    },
+    {
+      "key": "REPORT_ID",
+      "value": ""
+    },
+    {
+      "key": "AUDIT_ID",
+      "value": ""
+    },
+    {
+      "key": "MFA_SECRET",
+      "value": ""
+    }
+  ],
+
   "item": [
     {
       "name": "auth",
