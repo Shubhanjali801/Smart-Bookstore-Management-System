@@ -15,7 +15,7 @@ const app = express();
 // slash-less Origin still matches). CLIENT_URL lets you pin a prod origin too.
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://bookstore-frontends.vercel.app/books',
+  'https://bookstore-frontends.vercel.app',
   process.env.CLIENT_URL,
 ]
   .filter(Boolean)
