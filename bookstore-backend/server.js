@@ -11,23 +11,30 @@ const app = express();
 
 // ── MIDDLEWARE ──
 
-// Allowed origins. Trailing slashes are stripped so an exact-match never
-// fails just because the browser sends the Origin without one. Add the prod
-// frontend here (or via the CLIENT_URL env var) whenever it changes.
+// Explicitly allowed origins (trailing slashes stripped so the browser's
+// slash-less Origin still matches). CLIENT_URL lets you pin a prod origin too.
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://bookstore-frontend-new.vercel.app',
+  'https://bookstore-frontends.vercel.app/books',
   process.env.CLIENT_URL,
 ]
   .filter(Boolean)
   .map((o) => o.replace(/\/+$/, ''));
 
+// Any Vercel deployment of this project is allowed. Vercel hands out several
+// hostnames (production, git-branch, and per-commit preview URLs), so matching
+// the *.vercel.app suffix avoids re-breaking CORS every time the URL changes.
+const isAllowedOrigin = (origin) => {
+  const normalized = origin.replace(/\/+$/, '');
+  if (allowedOrigins.includes(normalized)) return true;
+  return /^https:\/\/[a-z0-9-]+\.vercel\.app$/i.test(normalized);
+};
+
 app.use(cors({
   origin(origin, callback) {
     // Non-browser requests (curl, health checks, server-to-server) send no Origin.
     if (!origin) return callback(null, true);
-    const normalized = origin.replace(/\/+$/, '');
-    if (allowedOrigins.includes(normalized)) return callback(null, true);
+    if (isAllowedOrigin(origin)) return callback(null, true);
     return callback(new Error(`Not allowed by CORS: ${origin}`));
   },
   credentials: true,
